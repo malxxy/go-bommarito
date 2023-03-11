@@ -1,0 +1,1 @@
+// user model. Use MongoDb, not MySQL/sequelize
