@@ -1,10 +1,8 @@
-// if email = (pre insert admin emails), then display admin pages
-
-// (check if user is an admin in the resolvers, not the schema)
-
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const { isValidPassword } = require('mongoose-custom-validators')
 
+// schema for the users
 const userSchema = new Schema ({
     firstName: {
         type: String,
@@ -26,7 +24,10 @@ const userSchema = new Schema ({
         type: String,
         required: true,
         minlength: 8,
-
+        validate: {
+            validator: isValidPassword,
+            message: 'Password must have at least: 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.'
+          }
       },
 })
 
