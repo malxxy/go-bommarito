@@ -1,3 +1,4 @@
+// This is test code for admin UI layout. official development goes in the client/public folder
 // ANT UI BASIC HEADER, FOOTER, AND SIDE NAV BAR
 
 import React from 'react';
