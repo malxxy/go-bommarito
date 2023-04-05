@@ -27,6 +27,7 @@ const profileSchema = new Schema({
   ],
 });
 
+// Middelware to safely save password with bcrypt
 profileSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
@@ -36,6 +37,7 @@ profileSchema.pre('save', async function (next) {
   next();
 });
 
+// Check for correct password
 profileSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };

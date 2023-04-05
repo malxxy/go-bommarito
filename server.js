@@ -1,35 +1,35 @@
-require('dotenv').config()
+// require('dotenv').config()
 
-const express = require('express')
-const app = express()
+// const express = require('express')
+// const app = express()
 
-const jwt = require('jsonwebtoken')
+// const jwt = require('jsonwebtoken')
 
-app.use(express.json())
+// app.use(express.json())
 
-const posts = [
-    {
-        username: 'Sam',
-        title: 'Post 1'
-    },
-    {
-        username: 'Jim',
-        title: 'Post 2'
-    }
-]
+// const posts = [
+//     {
+//         username: 'Sam',
+//         title: 'Post 1'
+//     },
+//     {
+//         username: 'Jim',
+//         title: 'Post 2'
+//     }
+// ]
 
 
-app.get('/posts', (req, res) => {
-    res.json(posts)
-})
+// app.get('/posts', (req, res) => {
+//     res.json(posts)
+// })
 
-app.post('/login', (req, res) => {
-    // Authenticatie User
-    const username = req.body.username
-    const user = { name: username }
+// app.post('/login', (req, res) => {
+//     // Authenticatie User
+//     const username = req.body.username
+//     const user = { name: username }
 
-    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-    res.json({ accessToken: accessToken })
-})
+//     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
+//     res.json({ accessToken: accessToken })
+// })
 
-app.listen(3000)
+// app.listen(3000)
