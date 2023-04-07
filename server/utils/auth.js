@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const secret = 'secret'; //eventually read from heroku!
+const secret = 'private'; //will be eventually read from heroku
 const expiration = '2h';
 
 module.exports = {
