@@ -1,9 +1,8 @@
 // if email = (pre insert admin emails), then display admin pages
-
 // (check if user is an admin in the resolvers, not the schema)
 
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile } = require('../models');
+const { User, Blog } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -18,8 +17,8 @@ const resolvers = {
     },
   
     Mutation: {
-      addProfile: async (parent, { firstName, lastName, email, password }) => {
-        const profile = await Profile.create({ firstName, lastName, email, password });
+      addProfile: async (parent, { name, email, password }) => {
+        const profile = await Profile.create({ name, email, password });
         const token = signToken(profile);
   
         return { token, profile };
@@ -41,11 +40,11 @@ const resolvers = {
         return { token, profile };
       },
   
-      addPost: async (parent, { profileId, post }) => {
+      addSkill: async (parent, { profileId, skill }) => {
         return Profile.findOneAndUpdate(
           { _id: profileId },
           {
-            $addToSet: { posts: post },
+            $addToSet: { skills: skill },
           },
           {
             new: true,
@@ -56,10 +55,10 @@ const resolvers = {
       removeProfile: async (parent, { profileId }) => {
         return Profile.findOneAndDelete({ _id: profileId });
       },
-      removePost: async (parent, { profileId, post }) => {
+      removeSkill: async (parent, { profileId, skill }) => {
         return Profile.findOneAndUpdate(
           { _id: profileId },
-          { $pull: { posts: post } },
+          { $pull: { skills: skill } },
           { new: true }
         );
       },

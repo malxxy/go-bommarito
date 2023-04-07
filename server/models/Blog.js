@@ -7,7 +7,7 @@ const blogSchema = new Schema({
     type: String,
     required: 'You need to insert a title!',
     minlength: 1,
-    maxlength: 100,
+    maxlength: 200,
     trim: true,
   },
   blogText: {
