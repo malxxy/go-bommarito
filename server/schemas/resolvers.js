@@ -15,6 +15,13 @@ const resolvers = {
       profile: async (parent, { profileId }) => {
         return Profile.findOne({ _id: profileId });
       },
+      blogs: async (parent, { username }) => {
+        const params = username ? { username } : {};
+        return Blog.find(params).sort({ createdAt: -1 });
+      },
+      blog: async (parent, { blogId }) => {
+        return Blog.findOne({ _id: thoughtId });
+      },
     },
   
     Mutation: {
@@ -63,7 +70,26 @@ const resolvers = {
           { new: true }
         );
       },
-    },
+      addComment: async (parent, { thoughtId, commentText, commentAuthor }) => {
+        return Blog.findOneAndUpdate(
+          { _id: blogId },
+          {
+            $addToSet: { comments: { commentText, commentAuthor } },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      },
+      removeComment: async (parent, { blogId, commentId }) => {
+        return Blog.findOneAndUpdate(
+          { _id: blogId },
+          { $pull: { comments: { _id: commentId } } },
+          { new: true }
+        );
+      }
+    }
   };
   
   module.exports = resolvers;
