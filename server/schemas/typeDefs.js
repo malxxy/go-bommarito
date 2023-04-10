@@ -37,7 +37,7 @@ const typeDefs = gql`
     profiles: [Profile]
     profile(username: String!): Profile
     blogs: [Blog]
-    blog(blogID: ID!): Blog
+    blog(blogId: ID!): Blog
     # user(username: String!): User
     # blogs(username: String): [Blog]
     # blogs(blogId: ID!): Blog

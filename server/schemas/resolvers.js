@@ -3,7 +3,7 @@
 // (check if user is an admin in the resolvers, not the schema)
 
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile } = require('../models');
+const { Profile, Blog } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -20,7 +20,7 @@ const resolvers = {
         return Blog.find(params).sort({ createdAt: -1 });
       },
       blog: async (parent, { blogId }) => {
-        return Blog.findOne({ _id: thoughtId });
+        return Blog.findOne({ _id: blogId });
       },
     },
   
