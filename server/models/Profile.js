@@ -35,10 +35,11 @@ const profileSchema = new Schema({
       message: 'Password must have at least: 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.'
     }*/
   },
-  post: [
+  blog: [
     {
       type: String,
       trim: true,
+      ref: 'Blog'
     },
   ],
 });
