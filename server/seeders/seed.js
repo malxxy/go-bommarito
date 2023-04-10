@@ -1,17 +1,35 @@
 const db = require('../config/connection');
-const { User, Blog } = require('../models');
-const userSeeds = require('./userSeeds.json');
+const { Profile, Blog } = require('../models');
+const profileSeeds = require('./profileSeeds.json');
 const blogSeeds = require('./blogSeeds.json');
 
 db.once('open', async () => {
     try {
-        // incomplete
+
+      // empties out the database before seeding it again
+      await Profile.deleteMany({})
+      await Blog.deleteMany({});
+
+      // seeds all existing profile info
+      await Profile.create(profileSeeds);
+      // seeds all exisiting blog info
+      for (let i = 0; i < blogSeeds.length; i++) {
+        const { _id, blogAuthor } = await Blog.create(blogSeeds[i]);
+        const user = await Profile.findOneAndUpdate(
+          { username: blogAuthor },
+          {
+            $addToSet: {
+              Blog: _id,
+            },
+          }
+        );
+      }
+      console.log('Data has successfully seeded!');
     } catch (err) {
       console.error(err);
       process.exit(1);
     }
   
-    console.log('Data has successfully seeded!');
     process.exit(0);
   });
   

@@ -48,7 +48,7 @@ const resolvers = {
         return { token, profile };
       },
   
-      addPost: async (parent, { profileId, post }) => {
+      addBlog: async (parent, { profileId, post }) => {
         return Profile.findOneAndUpdate(
           { _id: profileId },
           {
@@ -63,7 +63,7 @@ const resolvers = {
       removeProfile: async (parent, { profileId }) => {
         return Profile.findOneAndDelete({ _id: profileId });
       },
-      removePost: async (parent, { profileId, post }) => {
+      removeBlog: async (parent, { profileId, post }) => {
         return Profile.findOneAndUpdate(
           { _id: profileId },
           { $pull: { posts: post } },
