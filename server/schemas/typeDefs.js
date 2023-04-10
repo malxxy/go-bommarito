@@ -45,7 +45,7 @@ const typeDefs = gql`
   }
 # used to modify data
   type Mutation {
-    addProfile(username: String!, email: String!, password: String!): Auth
+    addProfile(username: String!, email: String!, password: String!, firsName: String!, lastName: String!): Auth
     login(email: String!, password: String!): Auth
     addBlog(blogText: String!, blogAuthor: String!): Blog
     addComment(
