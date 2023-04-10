@@ -31,15 +31,18 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
-
+ 
+# used to retrive data
   type Query {
-    users: [User]
+    Profiles: [Profile]
+    Blogs: [Blog]
+    Comments: [Comment]
     # user(username: String!): User
     # blogs(username: String): [Blog]
     # blogs(blogId: ID!): Blog
     # Finish code
   }
-
+# used to modify data
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
