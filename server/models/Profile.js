@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const { isValidPassword } = require('mongoose-custom-validators')
+// const { isValidPassword } = require('mongoose-unique-validator')
 
 
 const profileSchema = new Schema({
@@ -30,10 +30,10 @@ const profileSchema = new Schema({
     type: String,
     required: true,
     minlength: 8,
-    validate: {
+    /* validate: {
       validator: isValidPassword,
       message: 'Password must have at least: 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.'
-    }
+    }*/
   },
   post: [
     {

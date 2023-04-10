@@ -29,14 +29,15 @@ const typeDefs = gql`
 
   type Auth {
     token: ID!
-    user: User
+    profile: Profile
   }
  
 # used to retrive data
   type Query {
-    Profiles: [Profile]
-    Blogs: [Blog]
-    Comments: [Comment]
+    profiles: [Profile]
+    profile(username: String!): Profile
+    blogs: [Blog]
+    blog(blogID: ID!): Blog
     # user(username: String!): User
     # blogs(username: String): [Blog]
     # blogs(blogId: ID!): Blog
