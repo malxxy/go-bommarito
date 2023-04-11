@@ -9,7 +9,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    post: [Blog]!
+    blogs: [Blog]!
   }
 
   type Blog {

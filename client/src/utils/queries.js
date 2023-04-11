@@ -1,21 +1,32 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_USER = gql`
-  query user($username: String!) {
-    user(username: $username) {
-      _id
-      username
-      email
-      thoughts {
-        _id
-        thoughtText
-        createdAt
-      }
-    }
+// still need to attach blogs to profiles
+export const QUERY_PROFILES = gql`
+  query Profiles {
+  profiles {
+    _id
+    firstName
+    lastName
+    username
+    email
   }
+}
 `;
 
-export const QUERY_THOUGHTS = gql`
+// still need to attach blogs
+export const QUERY_SINGLE_PROFILE = gql`
+  query Profiles($username: String!) {
+  profile(username: $username) {
+    _id
+    firstName
+    lastName
+    username
+    email
+  }
+}
+`;
+
+export const QUERY_BLOGS = gql`
   query getThoughts {
     thoughts {
       _id
