@@ -27,9 +27,8 @@ function Navbar() {
             </NavLink>
         </NavMenu>
         <NavBtn>
-            <NavBtnLink to="/login">Sign In</NavBtnLink>
+            <NavBtnLink to="/login">Login</NavBtnLink>
         </NavBtn>
-    
       </Nav>
     </>
   );

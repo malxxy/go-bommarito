@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import { useMutation, ApolloProvider} from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
 
 import Auth from '../../../utils/auth';
@@ -41,6 +41,7 @@ const Login = (props) => {
   };
 
   return (
+    <ApolloProvider>
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
@@ -88,6 +89,7 @@ const Login = (props) => {
         </div>
       </div>
     </main>
+    </ApolloProvider>
   );
 };
 
