@@ -54,7 +54,7 @@ const resolvers = {
   
         await Profile.findOneAndUpdate(
           { username: blogAuthor },
-          { $addToSet: { Blogs: Blog._id } }
+          { $addToSet: { Profile: Blog._id } }
         );
   
         return blog;
