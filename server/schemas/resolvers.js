@@ -3,7 +3,7 @@
 // (check if user is an admin in the resolvers, not the schema)
 
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile } = require('../models');
+const { Profile, Blog } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -22,13 +22,13 @@ const resolvers = {
       //   return Blog.find().sort({ createdAt: -1 });
       // },
       blog: async (parent, { blogId }) => {
-        return Blog.findOne({ _id: thoughtId });
+        return Blog.findOne({ _id: blogId });
       },
     },
   
     Mutation: {
-      addProfile: async (parent, { firstName, lastName, email, username, password }) => {
-        const profile = await Profile.create({ firstName, lastName, email, username, password });
+      addProfile: async (parent, { username, firstName, lastName, email, password }) => {
+        const profile = await Profile.create({ username, firstName, lastName, email, password });
         const token = signToken(profile);
   
         return { token, profile };
@@ -49,7 +49,10 @@ const resolvers = {
         const token = signToken(profile);
         return { token, profile };
       },
+      addBlog: async (parent, { blogText, blogAuthor, blogTitle }) => {
+        const blog = await Blog.create({ blogTitle, blogText, blogAuthor });
   
+<<<<<<< HEAD
       addBlog: async (parent, { profileId, post }) => {
         return Profile.findOneAndUpdate(
           { _id: profileId },
@@ -60,19 +63,30 @@ const resolvers = {
             new: true,
             runValidators: true,
           }
+=======
+        await Profile.findOneAndUpdate(
+          { username: blogAuthor },
+          { $addToSet: { Blogs: Blog._id } }
+>>>>>>> c1306b5e5424e8fadd14982e3533e00074a43c80
         );
+  
+        return blog;
       },
       removeProfile: async (parent, { profileId }) => {
         return Profile.findOneAndDelete({ _id: profileId });
       },
+<<<<<<< HEAD
       removeBlog: async (parent, { profileId, post }) => {
+=======
+      removeBlog: async (parent, { profileId, blogId }) => {
+>>>>>>> c1306b5e5424e8fadd14982e3533e00074a43c80
         return Profile.findOneAndUpdate(
           { _id: profileId },
-          { $pull: { posts: post } },
+          { $pull: { Blogs: blogId } },
           { new: true }
         );
       },
-      addComment: async (parent, { thoughtId, commentText, commentAuthor }) => {
+      addComment: async (parent, { blogId, commentText, commentAuthor }) => {
         return Blog.findOneAndUpdate(
           { _id: blogId },
           {

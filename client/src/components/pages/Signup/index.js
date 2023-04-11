@@ -114,7 +114,7 @@
 // export default Signup;
 
 import React, { useState } from 'react';
-import { validateEmail } from '../../utils/helper';
+import { validateEmail } from '../../../utils/helper';
 
 function SignUpForm() {
 
@@ -181,5 +181,5 @@ return (
     </section>
     );
 }
-    
+
 export default SignUpForm;

@@ -1,45 +1,51 @@
 import { gql } from '@apollo/client';
 
-export const ADD_PROFILE = gql`
-  mutation addProfile($name: String!, $email: String!, $password: String!) {
-    addProfile(name: $name, email: $email, password: $password) {
-      token
-      profile {
-        _id
-        name
-      }
+export const LOGIN_USER = gql`
+  mutation Login ($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+    profile {
+      _id
+      username
     }
   }
+}
+`;
+
+export const ADD_PROFILE = gql`
+  mutation Add_Profile ($username: String!, $email: String!, $password: String!, $firsName: String!, $lastName: String!) {
+  addProfile(username: $username, email: $email, password: $password, firstName: $firsName, lastName: $lastName) {
+    token
+    profile {
+      _id
+      firstName
+      lastName
+      username
+      email
+      password
+    }
+  }
+}
 `;
 
 export const ADD_BLOG = gql`
-  mutation addBlog($profileId: ID!, $blog: String!) {
-    addBlog(profileId: $profileId, blog: $blog) {
-      _id
-      name
-      blogs
-    }
+  mutation AddBlog($blogText: String!, $blogTitle: String!, $blogAuthor: String!) {
+  addBlog(blogText: $blogText, blogTitle: $blogTitle, blogAuthor: $blogAuthor) {
+    _id
+    blogTitle
+    blogText
+    blogAuthor
+    createdAt
   }
+}
 `;
 
-export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-      profile {
-        _id
-        name
-      }
-    }
+export const ADD_COMMENT = gql`
+  mutation Comment($blogId: ID!, $commentText: String!, $commentAuthor: String!) {
+  addComment(blogId: $blogId, commentText: $commentText, commentAuthor: $commentAuthor) {
+    _id
+    commentText
+    createdAt
   }
-`;
-
-export const REMOVE_BLOG = gql`
-  mutation removeBlog($blog: String!) {
-    removeBlog(blog: $blog) {
-      _id
-      name
-      blogs
-    }
-  }
+}
 `;

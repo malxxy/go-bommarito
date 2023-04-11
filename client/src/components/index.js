@@ -1,7 +1,6 @@
 import React from "react";
 import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./Navbar.js";
 
-
 function Navbar() {
   return (
     <>
@@ -17,7 +16,7 @@ function Navbar() {
             <NavLink to="/discover" activeStyle>
                 Discover
             </NavLink>
-            <NavLink to="/Categories" activeStyle>
+            <NavLink to="/categories" activeStyle>
                 Categories
             </NavLink>
             <NavLink to="/media" activeStyle>
