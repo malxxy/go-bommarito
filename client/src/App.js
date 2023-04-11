@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Navbar from './components';
+import Hero from './components/hero';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Discover from '../src/components/pages/discover';
+import Categories from './components/pages/Categories'; 
+import Media from './components/pages/media';
+import Signup from './components/pages/signup';
+import Login from './components/pages/login';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+     <Navbar />
+     <Hero />
+     <Routes>
+      {/* <Switch> */}
+        <Route path="/discover" element ={<Discover />} />
+        <Route path="/Categories" element={<Categories />}/> 
+        <Route path="/media" element={<Media />}/>
+        <Route path="/signup" element={<Signup />}/>
+        <Route path="/login" element={<Login />}/>
+     {/* </Switch> */}
+     </Routes>
+    </Router>
   );
 }
 
-export default App;
+export default App; 

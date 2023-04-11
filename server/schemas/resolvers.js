@@ -11,7 +11,6 @@ const resolvers = {
       profiles: async () => {
         return Profile.find();
       },
-  
       profile: async (parent, { profileId }) => {
         return Profile.findOne({ _id: profileId });
       },
@@ -19,14 +18,17 @@ const resolvers = {
         const params = username ? { username } : {};
         return Blog.find(params).sort({ createdAt: -1 });
       },
+      // allBlogs: async () => {
+      //   return Blog.find().sort({ createdAt: -1 });
+      // },
       blog: async (parent, { blogId }) => {
         return Blog.findOne({ _id: thoughtId });
       },
     },
   
     Mutation: {
-      addProfile: async (parent, { firstName, lastName, email, password }) => {
-        const profile = await Profile.create({ firstName, lastName, email, password });
+      addProfile: async (parent, { firstName, lastName, email, username, password }) => {
+        const profile = await Profile.create({ firstName, lastName, email, username, password });
         const token = signToken(profile);
   
         return { token, profile };
@@ -48,7 +50,7 @@ const resolvers = {
         return { token, profile };
       },
   
-      addPost: async (parent, { profileId, post }) => {
+      addBlog: async (parent, { profileId, post }) => {
         return Profile.findOneAndUpdate(
           { _id: profileId },
           {
@@ -63,7 +65,7 @@ const resolvers = {
       removeProfile: async (parent, { profileId }) => {
         return Profile.findOneAndDelete({ _id: profileId });
       },
-      removePost: async (parent, { profileId, post }) => {
+      removeBlog: async (parent, { profileId, post }) => {
         return Profile.findOneAndUpdate(
           { _id: profileId },
           { $pull: { posts: post } },
