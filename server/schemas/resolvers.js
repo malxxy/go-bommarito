@@ -47,18 +47,15 @@ const resolvers = {
         const token = signToken(profile);
         return { token, profile };
       },
+      addBlog: async (parent, { blogText, blogAuthor, blogTitle }) => {
+        const blog = await Blog.create({ blogTitle, blogText, blogAuthor });
   
-      addBlog: async (parent, { profileId, blog }) => {
-        return Profile.findOneAndUpdate(
-          { _id: profileId },
-          {
-            $addToSet: { blogs: blog },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
+        await Profile.findOneAndUpdate(
+          { username: blogAuthor },
+          { $addToSet: { Blogs: Blog._id } }
         );
+  
+        return blog;
       },
       removeProfile: async (parent, { profileId }) => {
         return Profile.findOneAndDelete({ _id: profileId });
