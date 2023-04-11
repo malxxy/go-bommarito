@@ -54,7 +54,7 @@ const typeDefs = gql`
       commentAuthor: String!
     ): Comment
     removeBlog(blogId: ID!): Blog
-    removeComment(blogId: ID!, commentId: ID!): Blog
+    removeComment(blogId: ID!, commentId: ID!): Comment
     removeProfile(username: String!, password: String!): Profile
   }
 `;

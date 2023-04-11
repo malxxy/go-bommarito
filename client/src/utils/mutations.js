@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 
+// input requires user
 export const LOGIN_USER = gql`
   mutation Login ($email: String!, $password: String!) {
   login(email: $email, password: $password) {
@@ -49,3 +50,37 @@ export const ADD_COMMENT = gql`
   }
 }
 `;
+
+export const REMOVE_BLOG = gql`
+ mutation Mutation($blogId: ID!) {
+  removeBlog(blogId: $blogId) {
+    blogTitle
+    createdAt
+  }
+}
+`;
+
+export const REMOVE_COMMENT = gql`
+ mutation RemoveComment($blogId: ID!, $commentId: ID!) {
+  removeComment(blogId: $blogId, commentId: $commentId) {
+    _id
+    commentText
+    createdAt
+  }
+}
+`;
+
+export const DELETE_PROFILE = gql`
+ mutation RemoveProfile($username: String!, $password: String!) {
+  removeProfile(username: $username, password: $password) {
+    _id
+    firstName
+    lastName
+    username
+    email
+    password
+  }
+}
+`;
+
+
