@@ -62,12 +62,8 @@ const resolvers = {
       removeProfile: async (parent, { profileId }) => {
         return Profile.findOneAndDelete({ _id: profileId });
       },
-      removeBlog: async (parent, { profileId, blogId }) => {
-        return Profile.findOneAndUpdate(
-          { _id: profileId },
-          { $pull: { Blogs: blogId } },
-          { new: true }
-        );
+      removeBlog: async (parent, { blogId }) => {
+        return Blog.findOneAndDelete({ _id: blogId })
       },
       addComment: async (parent, { blogId, commentText, commentAuthor }) => {
         return Blog.findOneAndUpdate(
