@@ -25,8 +25,8 @@ const resolvers = {
     },
   
     Mutation: {
-      addProfile: async (parent, { firstName, lastName, email, password }) => {
-        const profile = await Profile.create({ firstName, lastName, email, password });
+      addProfile: async (parent, { username, firstName, lastName, email, password }) => {
+        const profile = await Profile.create({ username, firstName, lastName, email, password });
         const token = signToken(profile);
   
         return { token, profile };
@@ -48,11 +48,11 @@ const resolvers = {
         return { token, profile };
       },
   
-      addBlog: async (parent, { profileId, post }) => {
+      addBlog: async (parent, { profileId, blog }) => {
         return Profile.findOneAndUpdate(
           { _id: profileId },
           {
-            $addToSet: { posts: post },
+            $addToSet: { blogs: blog },
           },
           {
             new: true,
