@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <Nav>
         <NavLink to="/"> 
-        <img src="../Logo.png"/>
+        {/* <img src="../Logo.png"/> */}
         </NavLink>
         <Bars />
         <NavMenu>
@@ -16,7 +16,7 @@ function Navbar() {
             <NavLink to="/discover" activeStyle>
                 Discover
             </NavLink>
-            <NavLink to="/Categories" activeStyle>
+            <NavLink to="/categories" activeStyle>
                 Categories
             </NavLink>
             <NavLink to="/media" activeStyle>
@@ -27,7 +27,7 @@ function Navbar() {
             </NavLink>
         </NavMenu>
         <NavBtn>
-            <NavBtnLink to="/signin">Sign In</NavBtnLink>
+            <NavBtnLink to="/login">Sign In</NavBtnLink>
         </NavBtn>
     
       </Nav>
