@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <Nav>
         <NavLink to="/"> 
-        {/* <img src="../Logo.png"/> */}
+        <img src="../Logo.png"/>
         </NavLink>
         <Bars />
         <NavMenu>

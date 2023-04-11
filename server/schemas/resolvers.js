@@ -51,7 +51,7 @@ const resolvers = {
       },
       addBlog: async (parent, { blogText, blogAuthor, blogTitle }) => {
         const blog = await Blog.create({ blogTitle, blogText, blogAuthor });
-
+  
         await Profile.findOneAndUpdate(
           { username: blogAuthor },
           { $addToSet: { Blogs: Blog._id } }
