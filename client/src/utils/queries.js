@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 
+// Retrieve all Profiles
 // still need to attach blogs to profiles
 export const QUERY_PROFILES = gql`
   query Profiles {
@@ -13,6 +14,7 @@ export const QUERY_PROFILES = gql`
 }
 `;
 
+// Retrieve a specific Profile
 // still need to attach blogs
 export const QUERY_SINGLE_PROFILE = gql`
   query Profiles($username: String!) {
@@ -26,29 +28,38 @@ export const QUERY_SINGLE_PROFILE = gql`
 }
 `;
 
+// Retrieve all Blogs
 export const QUERY_BLOGS = gql`
-  query getThoughts {
-    thoughts {
+  query Blogs {
+  blogs {
+    _id
+    blogTitle
+    blogText
+    blogAuthor
+    createdAt
+    comments {
       _id
-      thoughtText
-      thoughtAuthor
+      commentText
       createdAt
     }
   }
+}
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+// Retreive a Specific Blog
+export const QUERY_SINGLE_BLOG = gql`
+  query Blog($blogId: ID!) {
+  blog(blogId: $blogId) {
+    _id
+    blogTitle
+    blogText
+    blogAuthor
+    createdAt
+    comments {
       _id
-      thoughtText
-      thoughtAuthor
+      commentText
       createdAt
-      comments {
-        _id
-        commentText
-        createdAt
-      }
     }
   }
+}
 `;
