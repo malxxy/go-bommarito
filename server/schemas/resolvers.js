@@ -51,23 +51,10 @@ const resolvers = {
       },
       addBlog: async (parent, { blogText, blogAuthor, blogTitle }) => {
         const blog = await Blog.create({ blogTitle, blogText, blogAuthor });
-  
-<<<<<<< HEAD
-      addBlog: async (parent, { profileId, post }) => {
-        return Profile.findOneAndUpdate(
-          { _id: profileId },
-          {
-            $addToSet: { posts: post },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-=======
+
         await Profile.findOneAndUpdate(
           { username: blogAuthor },
           { $addToSet: { Blogs: Blog._id } }
->>>>>>> c1306b5e5424e8fadd14982e3533e00074a43c80
         );
   
         return blog;
@@ -75,11 +62,7 @@ const resolvers = {
       removeProfile: async (parent, { profileId }) => {
         return Profile.findOneAndDelete({ _id: profileId });
       },
-<<<<<<< HEAD
-      removeBlog: async (parent, { profileId, post }) => {
-=======
       removeBlog: async (parent, { profileId, blogId }) => {
->>>>>>> c1306b5e5424e8fadd14982e3533e00074a43c80
         return Profile.findOneAndUpdate(
           { _id: profileId },
           { $pull: { Blogs: blogId } },
