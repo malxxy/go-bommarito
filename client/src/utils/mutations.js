@@ -28,41 +28,24 @@ export const ADD_PROFILE = gql`
 }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!, $thoughtAuthor: String!) {
-    addThought(thoughtText: $thoughtText, thoughtAuthor: $thoughtAuthor) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-      }
-    }
+export const ADD_BLOG = gql`
+  mutation AddBlog($blogText: String!, $blogTitle: String!, $blogAuthor: String!) {
+  addBlog(blogText: $blogText, blogTitle: $blogTitle, blogAuthor: $blogAuthor) {
+    _id
+    blogTitle
+    blogText
+    blogAuthor
+    createdAt
   }
+}
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment(
-    $thoughtId: ID!
-    $commentText: String!
-    $commentAuthor: String!
-  ) {
-    addComment(
-      thoughtId: $thoughtId
-      commentText: $commentText
-      commentAuthor: $commentAuthor
-    ) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        createdAt
-      }
-    }
+  mutation Comment($blogId: ID!, $commentText: String!, $commentAuthor: String!) {
+  addComment(blogId: $blogId, commentText: $commentText, commentAuthor: $commentAuthor) {
+    _id
+    commentText
+    createdAt
   }
+}
 `;
