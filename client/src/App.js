@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
      <Navbar />
-     <Hero />
+     {/* <Hero /> */}
      <Routes>
       {/* <Switch> */}
         <Route path="/discover" element ={<Discover />} />
@@ -21,6 +21,7 @@ function App() {
         <Route path="/media" element={<Media />}/>
         {/* <Route path="/signup" element={<Signup />}/> */}
         <Route path="/login" element={<Login />}/>
+        <Route path= "/"  element={<Hero/>}/>
      {/* </Switch> */}
      </Routes>
     </Router>
