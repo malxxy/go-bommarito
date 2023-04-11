@@ -9,7 +9,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    post: [Blog]!
+    blogs: [Blog]!
   }
 
   type Blog {
@@ -37,7 +37,7 @@ const typeDefs = gql`
     profiles: [Profile]
     profile(username: String!): Profile
     blogs: [Blog]
-    blog(blogID: ID!): Blog
+    blog(blogId: ID!): Blog
     # user(username: String!): User
     # blogs(username: String): [Blog]
     # blogs(blogId: ID!): Blog
@@ -45,14 +45,14 @@ const typeDefs = gql`
   }
 # used to modify data
   type Mutation {
-    addProfile(username: String!, email: String!, password: String!, firsName: String!, lastName: String!): Auth
+    addProfile(username: String!, email: String!, password: String!, firstName: String!, lastName: String!): Auth
     login(email: String!, password: String!): Auth
-    addBlog(blogText: String!, blogAuthor: String!): Blog
+    addBlog(blogText: String!, blogTitle: String!, blogAuthor: String!): Blog
     addComment(
-      commentId: ID!
+      blogId: ID!
       commentText: String!
       commentAuthor: String!
-    ): Blog
+    ): Comment
     removeBlog(blogId: ID!): Blog
     removeComment(blogId: ID!, commentId: ID!): Blog
     removeProfile(username: String!, password: String!): Profile
