@@ -67,7 +67,7 @@ const resolvers = {
           { new: true }
         );
       },
-      addComment: async (parent, { thoughtId, commentText, commentAuthor }) => {
+      addComment: async (parent, { blogId, commentText, commentAuthor }) => {
         return Blog.findOneAndUpdate(
           { _id: blogId },
           {

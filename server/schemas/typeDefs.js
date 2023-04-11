@@ -49,10 +49,10 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addBlog(blogText: String!, blogTitle: String!, blogAuthor: String!): Blog
     addComment(
-      commentId: ID!
+      blogId: ID!
       commentText: String!
       commentAuthor: String!
-    ): Blog
+    ): Comment
     removeBlog(blogId: ID!): Blog
     removeComment(blogId: ID!, commentId: ID!): Blog
     removeProfile(username: String!, password: String!): Profile
