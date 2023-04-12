@@ -10,7 +10,6 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Discover from './components/pages/Discover';
 import SanDiego from './components/pages/San Diego'; 
 import FoodDrink from './components/pages/FoodDrink';
 import Signup from './components/pages/Signup';
@@ -20,6 +19,7 @@ import Destinations from './components/pages/Destinations';
 import Sports from './components/pages/Sports';
 import People from './components/pages/People';
 import ArtCulture from './components/pages/ArtCulture'; 
+import Discover from './components/pages/Discover'; 
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

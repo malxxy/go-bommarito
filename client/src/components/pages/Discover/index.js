@@ -1,5 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { useQuery } from '@apollo/client';
+
+import BlogList from '../../BlogList';
+
+import { QUERY_BLOGS } from '../../../utils/queries';
 
 const Main = styled.main`
 background: linear-gradient(to right, rgba(255,0,0,0), rgb(173, 216, 230));
@@ -84,9 +89,27 @@ const Img = styled.img`
         `
 
 
-function Discover() {
+const Discover = () => {
+
+    const { loading, data } = useQuery(QUERY_BLOGS);
+    const blogs = data?.blogs || [];
+        
     return (
         <Main>
+      
+              <div className="flex-row justify-center">
+                <div className="col-12 col-md-10 my-3">
+                  {loading ? (
+                    <div>Loading...</div>
+                  ) : (
+                    <BlogList
+                      blogs={blogs}
+                      title="Here's the current roster of friends..."
+                    />
+                  )}
+                </div>
+              </div>
+
         <Img src="../italy1.jpg" alt="stock image"/>
   <Content>
       <Title>
@@ -124,8 +147,7 @@ For our guests we offer large equipped outdoor areas, access to the swimming poo
       </Title>
   </Content>
  </Main>
-);
-    
+);  
     }
 
-    export default Discover;
+export default Discover;
