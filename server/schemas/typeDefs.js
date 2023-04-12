@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 
-// incomplete code, must be finished
+// everything works except for some reason the database is not recognizing blogs in teh Profile type
 const typeDefs = gql`
   type Profile {
     _id: ID
@@ -23,6 +23,7 @@ const typeDefs = gql`
 
   type Comment {
     _id: ID
+    commentAuthor: String
     commentText: String
     createdAt: String
   }
@@ -36,7 +37,7 @@ const typeDefs = gql`
   type Query {
     profiles: [Profile]
     profile(username: String!): Profile
-    blogs: [Blog]
+    blogs(username: String): [Blog]
     blog(blogId: ID!): Blog
     # user(username: String!): User
     # blogs(username: String): [Blog]
@@ -54,7 +55,7 @@ const typeDefs = gql`
       commentAuthor: String!
     ): Comment
     removeBlog(blogId: ID!): Blog
-    removeComment(blogId: ID!, commentId: ID!): Blog
+    removeComment(blogId: ID!, commentId: ID!): Comment
     removeProfile(username: String!, password: String!): Profile
   }
 `;
