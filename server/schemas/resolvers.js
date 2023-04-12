@@ -9,15 +9,21 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
       profiles: async () => {
-        return Profile.find().populate('blogs');
+        return Profile.find()
       },
       profile: async (parent, { username }) => {
         return Profile.findOne({ username }).populate('blogs');
       },
+      //returns all blogs in database from newest to oldest
+      allblogs: async () => {
+        return Blog.find()
+      },
+      //returns all blogs from single user
       blogs: async (parent, { username }) => {
         const params = username ? { username } : {};
         return Blog.find(params).sort({ createdAt: -1 });
       },
+      //returns single blog
       blog: async (parent, { blogId }) => {
         return Blog.findOne({ _id: blogId });
       },
