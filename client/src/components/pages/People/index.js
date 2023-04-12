@@ -1,26 +1,59 @@
-// import React from "react";
+// // import React from "react";
 
-// function People() {
-//     return (
-//       <main>
-//         <div>
-//         <h1>People</h1>
+// // function People() {
+// //     return (
+// //       <main>
+// //         <div>
+// //         <h1>People</h1>
+// //         </div>
+// //     </main>
+// //   );
+// // };
+
+// //     export default People;
+
+
+// import React from 'react';
+// import { useQuery } from '@apollo/client';
+
+// import ProfileList from '../components/ProfileList';
+
+// import { QUERY_PROFILES } from '../utils/queries';
+
+// const Home = () => {
+  
+//   const { loading, data } = useQuery(QUERY_PROFILES);
+//   const profiles = data?.profiles || [];
+
+//   return (
+//     <main>
+//       <div className="flex-row justify-center">
+//         <div className="col-12 col-md-10 my-3">
+//           {loading ? (
+//             <div>Loading...</div>
+//           ) : (
+//             <ProfileList
+//               profiles={profiles}
+//               title="Here's the current roster of friends..."
+//             />
+//           )}
 //         </div>
+//       </div>
 //     </main>
 //   );
 // };
 
-//     export default People;
+// export default Home;
 
 
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-import ProfileList from '../components/ProfileList';
+import ProfileList from '../../ProfileList';
 
-import { QUERY_PROFILES } from '../utils/queries';
+import { QUERY_PROFILES } from '../../../utils/queries';
 
-const Home = () => {
+const People = () => {
   
   const { loading, data } = useQuery(QUERY_PROFILES);
   const profiles = data?.profiles || [];
@@ -43,4 +76,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default People;
