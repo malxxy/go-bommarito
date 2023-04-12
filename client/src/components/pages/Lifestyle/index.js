@@ -1,11 +1,11 @@
 import React from "react";
 
-function Media() {
+function Lifestyle() {
     return (
         <div>
-        <h1>Media</h1>
+        <h1>Lifestyle</h1>
         </div>
     );
     }
 
-    export default Media;
+    export default Lifestyle;
