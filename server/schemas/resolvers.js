@@ -9,18 +9,15 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
       profiles: async () => {
-        return Profile.find();
+        return Profile.find().populate('blogs');
       },
-      profile: async (parent, { profileId }) => {
-        return Profile.findOne({ _id: profileId });
+      profile: async (parent, { username }) => {
+        return Profile.findOne({ username }).populate('blogs');
       },
       blogs: async (parent, { username }) => {
         const params = username ? { username } : {};
         return Blog.find(params).sort({ createdAt: -1 });
       },
-      // allBlogs: async () => {
-      //   return Blog.find().sort({ createdAt: -1 });
-      // },
       blog: async (parent, { blogId }) => {
         return Blog.findOne({ _id: blogId });
       },
@@ -54,7 +51,7 @@ const resolvers = {
   
         await Profile.findOneAndUpdate(
           { username: blogAuthor },
-          { $addToSet: { Blogs: Blog._id } }
+          { $addToSet: { Profile: Blog._id } }
         );
   
         return blog;
@@ -62,12 +59,8 @@ const resolvers = {
       removeProfile: async (parent, { profileId }) => {
         return Profile.findOneAndDelete({ _id: profileId });
       },
-      removeBlog: async (parent, { profileId, blogId }) => {
-        return Profile.findOneAndUpdate(
-          { _id: profileId },
-          { $pull: { Blogs: blogId } },
-          { new: true }
-        );
+      removeBlog: async (parent, { blogId }) => {
+        return Blog.findOneAndDelete({ _id: blogId })
       },
       addComment: async (parent, { blogId, commentText, commentAuthor }) => {
         return Blog.findOneAndUpdate(
