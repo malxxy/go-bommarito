@@ -10,9 +10,9 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Discover from './components/pages/Discover';
+import Discover from './components/BlogList'; //
 import Categories from './components/pages/Categories'; 
-import Media from './components/pages/Media';
+import Media from './components/ProfileList';
 import Signup from './components/pages/Signup';
 import Login from './components/pages/Login';
 
