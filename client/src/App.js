@@ -10,11 +10,18 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Discover from './components/BlogList'; //
-import Categories from './components/pages/Categories'; 
-import Media from './components/ProfileList';
+// import Discover from './components/pages/Discover';
+import SanDiego from './components/pages/San Diego'; 
+import FoodDrink from './components/pages/FoodDrink';
 import Signup from './components/pages/Signup';
 import Login from './components/pages/Login';
+import Lifestyle from './components/pages/Lifestyle';
+import Destinations from './components/pages/Destinations';
+import Sports from './components/pages/Sports';
+// import People from './components/pages/People';
+import ArtCulture from './components/pages/ArtCulture'; 
+import Discover from './components/BlogList'; //
+import People from './components/ProfileList'; //
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -49,8 +56,13 @@ function App() {
      <Routes>
       {/* <Switch> */}
         <Route path="/discover" element ={<Discover />} />
-        <Route path="/Categories" element={<Categories />}/> 
-        <Route path="/media" element={<Media />}/>
+        <Route path="/San Diego" element={<SanDiego />}/> 
+        <Route path="/FoodDrink" element={<FoodDrink />}/>
+        <Route path="/Lifestyle" element={<Lifestyle />}/>
+        <Route path="/Destinations" element={<Destinations />}/>
+        <Route path="/Sports" element={<Sports />}/>
+        <Route path="/People" element={<People />}/>
+        <Route path="/ArtCulture" element={<ArtCulture />}/>
         <Route path="/signup" element={<Signup />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/home" element ={<Hero />} />

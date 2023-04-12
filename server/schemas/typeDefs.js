@@ -9,7 +9,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    blogs: [Blog]!
+    blogs: [Blog]
   }
 
   type Blog {
@@ -18,7 +18,7 @@ const typeDefs = gql`
     blogText: String
     blogAuthor: String
     createdAt: String
-    comments: [Comment]!
+    comments: [Comment]
   }
 
   type Comment {
@@ -37,6 +37,7 @@ const typeDefs = gql`
   type Query {
     profiles: [Profile]
     profile(username: String!): Profile
+    allblogs: [Blog]
     blogs(username: String): [Blog]
     blog(blogId: ID!): Blog
     # user(username: String!): User

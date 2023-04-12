@@ -10,17 +10,32 @@ function Navbar() {
         </NavLink>
         <Bars />
         <NavMenu>
-            <NavLink to="/home" activeStyle>
+            {/* <NavLink to="/home" activeStyle>
                 Home
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/discover" activeStyle>
                 Discover
             </NavLink>
-            <NavLink to="/categories" activeStyle>
-                Categories
+            <NavLink to="/San Diego " activeStyle>
+              San Diego
             </NavLink>
-            <NavLink to="/media" activeStyle>
-                Media
+            <NavLink to="/FoodDrink" activeStyle>
+            Food + Drink
+            </NavLink>
+            <NavLink to="/Lifestyle" activeStyle>
+            Lifestyle
+            </NavLink>
+            <NavLink to="/Destinations" activeStyle>
+            Destinations
+            </NavLink>
+            <NavLink to="/Sports" activeStyle>
+            Sports
+            </NavLink>
+            <NavLink to="/People" activeStyle>
+            People
+            </NavLink>
+            <NavLink to="/ArtCulture" activeStyle>
+            Art+Culture
             </NavLink>
             <NavLink to="/signup" activeStyle>
                 Sign Up
