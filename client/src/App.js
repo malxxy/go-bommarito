@@ -53,6 +53,7 @@ function App() {
         <Route path="/media" element={<Media />}/>
         <Route path="/signup" element={<Signup />}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/home" element ={<Hero />} />
         <Route path= "/"  element={<Hero/>}/>
      {/* </Switch> */}
      </Routes>

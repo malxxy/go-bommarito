@@ -1,0 +1,38 @@
+.page {
+    background: linear-gradient(to right, rgba(255,0,0,0), rgb(173, 216, 230));
+}
+
+h4 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 0px;
+    padding-top: 60px;
+    text-align: center;
+    color: grey;
+}
+
+form{
+    text-align: center;
+}
+
+.form-input {
+    margin: 20px;
+    padding: 2px 20px;
+    font-weight: 200;
+}
+
+.btn{
+    margin: 20px 0px 750px 0px;
+}
+
+.footer {
+    border: 1px solid black;
+    border-radius: 17px;
+    width: 170vh;
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 1.5;
+    color: white;
+    background-color: #333;
+    text-align: center;
+}
