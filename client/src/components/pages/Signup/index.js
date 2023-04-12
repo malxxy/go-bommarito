@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import '../../../login-signup.css';
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../../../utils/mutations';
-
 import Auth from '../../../utils/auth';
 
 const Signup = () => {
@@ -41,7 +40,7 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main className="flex-row justify-center mb-4 page">
       <div className="col-12 col-lg-10">
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
@@ -61,6 +60,7 @@ const Signup = () => {
                   value={formState.name}
                   onChange={handleChange}
                 />
+                <br></br>
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -69,6 +69,7 @@ const Signup = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <br></br>
                 <input
                   className="form-input"
                   placeholder="******"
@@ -77,6 +78,7 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
+                <br></br>
                 <button
                   className="btn btn-block btn-info"
                   style={{ cursor: 'pointer' }}
@@ -95,7 +97,11 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      <footer class="footer"> 
+              <p>© 2023 GoBommarito. All rights reserved.</p>
+      </footer>
     </main>
+    
   );
 };
 
