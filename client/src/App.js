@@ -20,6 +20,14 @@ import Sports from './components/pages/Sports';
 import People from './components/pages/People';
 import ArtCulture from './components/pages/ArtCulture'; 
 import Discover from './components/pages/Discover'; 
+// imports for admin page
+// import React, {useState} from 'react';
+// import AdminHome from "./pages/AdminHome";
+// import Posts from "./pages/Posts";
+// import Categories from "./pages/Categories";
+// import AdminNav from "./componentsAdmin/adminNav";
+// import AdminAside from "./componentsAdmin/adminFooter";
+// import AdminFooter from "./componentsAdmin/adminFooter";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -69,6 +77,19 @@ function App() {
      </Routes>
     </Router>
     </ApolloProvider>
+
+  // admin logic
+    //   <div>
+    //   <AdminNav />
+    //   <AdminAside />
+    //   <div>
+    //     {/* Logic to display one of 3 pages */}
+    //     <AdminHome />
+    //     <Posts />
+    //     <Categories />
+    //   </div>
+    //   <AdminFooter />
+    // </div>
   );
 }
 
