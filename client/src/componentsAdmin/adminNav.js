@@ -1,4 +1,3 @@
-// admin nav from template
 import '../styles/output.css';
 
 function AdminNav () {

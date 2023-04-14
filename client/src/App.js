@@ -25,7 +25,7 @@ import Discover from './components/pages/Discover';
 // import Posts from "./pages/Posts";
 // import Categories from "./pages/Categories";
 import AdminNav from "./componentsAdmin/adminNav";
-// import AdminAside from "./componentsAdmin/adminFooter";
+import AdminAside from "./componentsAdmin/adminAside";
 import AdminFooter from "./componentsAdmin/adminFooter";
 
 // Construct our main GraphQL API endpoint
@@ -78,10 +78,7 @@ function App() {
      </Router>
      {/* /* Layout for main admin page */}
      <AdminNav />
-     {/* AdminNav
-     AdminHome
-     Categories
-     Posts*/}
+     <AdminAside />
      <AdminFooter />
      </ApolloProvider>
   );
