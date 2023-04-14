@@ -10,17 +10,17 @@ function AdminNav () {
                 </a>
             </div>
             <div className="p-4">
-                <a href="#AdminHome" className="p-4 text-lg font-semibold leading-6 text-gray-900">
+                <a href="#AdminHome" className="p-4 text-lg rounded-md hover:bg-mainBlue hover:text-mainWhite font-semibold leading-6 text-gray-900">
                     Home
                 </a>
-                <a href="#Posts" className="p-4 text-lg font-semibold leading-6 text-gray-900">
+                <a href="#Posts" className="p-4 text-lg  rounded-md font-semibold hover:bg-mainBlue hover:text-mainWhite leading-6 text-gray-900">
                     Posts
                 </a>
-                <a href="#Categories" className="p-4 text-lg font-semibold leading-6 text-gray-900">
+                <a href="#Categories" className="p-4 rounded-md text-lg font-semibold hover:bg-mainBlue hover:text-mainWhite leading-6 text-gray-900">
                     Categories</a>
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                <a href="#login" className="text-lg font-semibold leading-6 text-gray-900">
+                <a href="#login" className="p-4 rounded-md text-lg font-semibold leading-6 text-gray-900 hover:bg-mainBlue hover:text-mainWhite">
                 Log in <span aria-hidden="true">&rarr;</span>
                 </a>
             </div>

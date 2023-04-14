@@ -24,9 +24,12 @@ import Discover from './components/pages/Discover';
 import AdminNav from "./componentsAdmin/adminNav";
 import AdminAside from "./componentsAdmin/adminAside";
 import AdminHome from "./pagesAdmin/AdminHome";
-// import Categories from './pagesAdmin/Categories';
-// import Posts from './pagesAdmin/Posts';
+import Categories from './pagesAdmin/Categories';
+import Posts from './pagesAdmin/Posts';
 import AdminFooter from "./componentsAdmin/adminFooter";
+import Subscribers from './pagesAdmin/Subscribers';
+import Media from './pagesAdmin/Media';
+import Account from './pagesAdmin/Account';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -82,11 +85,14 @@ function App() {
             <AdminAside />
           </div>
         <div className="col-span-9 bg-mainBlue h-screen">
-          {/* <Routes>
+          <Routes>
             <Route path="/Posts" element={<Posts />}/>
             <Route path="/Categories" element={<Categories />}/>
             <Route path="/AdminHome" element={<AdminHome />}/>
-          </Routes> */}
+            <Route path="/Media" element={<Media />}/>
+            <Route path="/Subscribers" element={<Subscribers />}/>
+            <Route path="/Account" element={<Account />}/>
+          </Routes>
           <AdminHome />
         </div>
       </div>
