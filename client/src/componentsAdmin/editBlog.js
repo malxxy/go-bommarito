@@ -8,7 +8,7 @@
 //button to post blog 
 
 import React, { useState } from 'react';
-// import './style.css';
+import '../styles/output.css';
 
 function EditBlog() {
   // Create state variables for the fields in the form

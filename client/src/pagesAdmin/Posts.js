@@ -23,7 +23,17 @@
 
 // editBlog
 import EditBlog from "../componentsAdmin/editBlog";
+import '../styles/output.css';
+import Published from "../componentsAdmin/published";
 
-<div>
-    <EditBlog/>
-</div>
+function Posts() {
+    return (
+        <div>
+            <h1>Posts</h1>
+            <EditBlog />
+            <Published />
+        </div>
+    )
+}
+
+export default Posts;

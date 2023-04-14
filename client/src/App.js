@@ -21,12 +21,11 @@ import People from './components/pages/People';
 import ArtCulture from './components/pages/ArtCulture'; 
 import Discover from './components/pages/Discover'; 
 // imports for admin page
-// import AdminHome from "./pages/AdminHome";
-// import Posts from "./pages/Posts";
-// import Categories from "./pages/Categories";
-import Layout from "./pagesAdmin/Layout";
 import AdminNav from "./componentsAdmin/adminNav";
 import AdminAside from "./componentsAdmin/adminAside";
+// import AdminHome from "./pagesAdmin/AdminHome";
+// import Categories from './pagesAdmin/Categories';
+// import Posts from './pagesAdmin/Posts';
 import AdminFooter from "./componentsAdmin/adminFooter";
 
 // Construct our main GraphQL API endpoint
@@ -80,7 +79,6 @@ function App() {
      {/* /* Layout for main admin page */}
      <AdminNav />
      <AdminAside />
-     <Layout />
      <AdminFooter />
      </ApolloProvider>
   );

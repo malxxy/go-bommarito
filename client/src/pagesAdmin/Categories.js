@@ -1,10 +1,12 @@
 // display all categories 
 // OR logic to show EditCategories page
 import EditCategories from "../componentsAdmin/editCategories";
+import '../styles/output.css';
 
 function Categories() {
     return (
         <div>
+            <h1>Categories</h1>
             <table>
                 {/* <tr>
                     <td>{blog.categories[0]}</td>

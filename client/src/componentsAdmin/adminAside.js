@@ -16,15 +16,15 @@ function AdminAside() {
                                 Categories</a>
                         </li>
                         <li className="mt-12">
-                            <a href="#Categories" className="p-4 text-lg font-semibold text-grey">
+                            <a href="#Media" className="p-4 text-lg font-semibold text-grey">
                                 Media</a>
                         </li>
                         <li className="mt-12">
-                            <a href="#Categories" className="p-4 text-lg font-semibold text-grey">
+                            <a href="#Subscribers" className="p-4 text-lg font-semibold text-grey">
                                 Subscribers</a>
                         </li>
                         <li className="mt-12">
-                            <a href="#Categories" className="p-4 text-lg font-semibold text-grey">
+                            <a href="#Account" className="p-4 text-lg font-semibold text-grey">
                                 Account</a>
                         </li>
                     </ul>

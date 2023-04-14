@@ -6,7 +6,7 @@ function AdminNav () {
             <div className="flex lg:flex-1">
                 <a href="#Home" className="-m-1.5 p-1.5">
                 <span className="sr-only">GoBommarito</span>
-                <img className="h-8 w-auto" src='client/public/Logo.png' alt="GoBommarito Logo" />
+                <img className="h-12 w-auto" src='../Logo.png' alt="GoBommarito" />
                 </a>
             </div>
             <div className="p-4">

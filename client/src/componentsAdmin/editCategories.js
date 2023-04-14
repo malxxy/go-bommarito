@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles/forms.css';
+import '../styles/output.css';
 
 function EditCategories() {
   // Create state variables for the fields in the form
