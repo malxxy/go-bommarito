@@ -10,11 +10,11 @@ const ProfileList = ({ profiles, title }) => {
       <h3 className="text-primary">{title}</h3>
       <div className="flex-row justify-space-between my-4">
         {profiles &&
-          profiles.map((profile) => (
+          profiles.map((profile, index) => (
             <div key={profile._id} className="col-12 col-xl-6">
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0">
-                  {profile.name} <br />
+                  {profile.username} <br />
                 </h4>
                 <Link
                   className="btn btn-block btn-squared btn-light text-dark"
