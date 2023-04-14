@@ -35,10 +35,10 @@ function EditBlog() {
 
   return (
     <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl'>
-        <div className="justify-center">
+        <div className="flex-grow">
           <div>
           <h1 className='justify-center text-xl block m-5'>Edit Blog Post</h1>
-            <form className='justify-center form'>
+            <form className='form'>
                 <input
                 value={blogTitle}
                 name="blogTitle"
@@ -56,14 +56,14 @@ function EditBlog() {
                 className='form-input block'
                 />
                 <input
-                className='form-input block'
+                className='form-input block w-full h-200 m-2'
                 value={blogText}
                 name="blogText"
                 onChange={handleInputChange}
                 type="text"
                 placeholder="Write blog here"
                 />
-                <button type="button" className='rounded-full bg-mainBlue m-3' onClick={handleFormSubmit}>Submit</button>
+            <button className='bg-mainBlue hover:bg-darkestBlue rounded-md p-2 my-3 text-mainWhite' onClick={handleFormSubmit}>Publish</button>
             </form>
         </div>
       </div>

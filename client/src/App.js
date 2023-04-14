@@ -75,17 +75,22 @@ function App() {
          <Route path= "/"  element={<Hero/>}/>
         {/* </Switch> */}
       </Routes>
-     </Router>
      {/* /* Layout for main admin page */}
      <AdminNav />
      <div className="grid grid-cols-12">
-      <div className="col-span-3">
+      <div className="col-span-3 h-full">
         <AdminAside />
       </div>
       <div className="col-span-9 bg-mainBlue">
+        {/* <Routes>
+          <Route path="/Posts" element={<Posts />}/>
+          <Route path="/Categories" element={<Categories />}/>
+          <Route path="/AdminHome" element={<AdminHome />}/>
+        </Routes> */}
         <Posts />
       </div>
      </div>
+     </Router>
      <AdminFooter />
      </ApolloProvider>
   );

@@ -10,7 +10,7 @@ function AdminNav () {
                 </a>
             </div>
             <div className="p-4">
-                <a href="#Home" className="p-4 text-lg font-semibold leading-6 text-gray-900">
+                <a href="#AdminHome" className="p-4 text-lg font-semibold leading-6 text-gray-900">
                     Home
                 </a>
                 <a href="#Posts" className="p-4 text-lg font-semibold leading-6 text-gray-900">
