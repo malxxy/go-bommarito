@@ -24,7 +24,7 @@ import Discover from './components/pages/Discover';
 // import AdminHome from "./pages/AdminHome";
 // import Posts from "./pages/Posts";
 // import Categories from "./pages/Categories";
-// import AdminNav from "./componentsAdmin/adminNav";
+import AdminNav from "./componentsAdmin/adminNav";
 // import AdminAside from "./componentsAdmin/adminFooter";
 // import AdminFooter from "./componentsAdmin/adminFooter";
 
@@ -33,7 +33,7 @@ const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
 });
 
-// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+//Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
   const token = localStorage.getItem('id_token');
@@ -58,9 +58,9 @@ function App() {
     <ApolloProvider client={client}>
     <Router>
     <Navbar />
-    {/* <Hero /> */}
+    <Hero />
     <Routes>
-    {/* <Switch> */}
+      {/* <Switch> */}
          <Route path="/discover" element ={<Discover />} />
          <Route path="/San Diego" element={<SanDiego />}/> 
          <Route path="/FoodDrink" element={<FoodDrink />}/>
@@ -73,16 +73,16 @@ function App() {
          <Route path="/login" element={<Login />}/>
          <Route path="/home" element ={<Hero />} />
          <Route path= "/"  element={<Hero/>}/>
-      {/* </Switch> */}
+        {/* </Switch> */}
       </Routes>
      </Router>
-     {/* Layout for main admin page
-     AdminNav
+     {/* /* Layout for main admin page */}
+     <AdminNav />
+     {/* AdminNav
      AdminHome
      Categories
      Posts
-     AdminFooter
-     */}
+     AdminFooter */}
      </ApolloProvider>
   );
 }
