@@ -1,12 +1,3 @@
-// edit/new blog page
-
-// title input
-// author input
-// description input
-// text input with rich text editor
-
-//button to post blog 
-
 import React, { useState } from 'react';
 import '../styles/output.css';
 
@@ -43,33 +34,39 @@ function EditBlog() {
   };
 
   return (
-    <div>
-        <card>
-            <form className="form">
+    <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl'>
+        <div className="justify-center">
+          <div>
+          <h1 className='justify-center text-xl block m-5'>Edit Blog Post</h1>
+            <form className='justify-center form'>
                 <input
                 value={blogTitle}
                 name="blogTitle"
                 onChange={handleInputChange}
                 type="text"
                 placeholder="Blog Title"
+                className='form-input block'
                 />
                 <input
                 value={blogAuthor}
                 name="blogAuthor"
                 onChange={handleInputChange}
                 type="text"
-                placeholder="Author"
+                placeholder="Blog Author"
+                className='form-input block'
                 />
                 <input
+                className='form-input block'
                 value={blogText}
                 name="blogText"
                 onChange={handleInputChange}
                 type="text"
                 placeholder="Write blog here"
                 />
-                <button type="button" onClick={handleFormSubmit}>Submit</button>
+                <button type="button" className='rounded-full bg-mainBlue m-3' onClick={handleFormSubmit}>Submit</button>
             </form>
-      </card>
+        </div>
+      </div>
     </div>
   );
 }

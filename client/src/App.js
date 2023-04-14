@@ -25,7 +25,7 @@ import AdminNav from "./componentsAdmin/adminNav";
 import AdminAside from "./componentsAdmin/adminAside";
 // import AdminHome from "./pagesAdmin/AdminHome";
 // import Categories from './pagesAdmin/Categories';
-// import Posts from './pagesAdmin/Posts';
+import Posts from './pagesAdmin/Posts';
 import AdminFooter from "./componentsAdmin/adminFooter";
 
 // Construct our main GraphQL API endpoint
@@ -78,7 +78,14 @@ function App() {
      </Router>
      {/* /* Layout for main admin page */}
      <AdminNav />
-     <AdminAside />
+     <div className="grid grid-cols-12">
+      <div className="col-span-3">
+        <AdminAside />
+      </div>
+      <div className="col-span-9 bg-mainBlue">
+        <Posts />
+      </div>
+     </div>
      <AdminFooter />
      </ApolloProvider>
   );

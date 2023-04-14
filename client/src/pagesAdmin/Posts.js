@@ -24,15 +24,21 @@
 // editBlog
 import EditBlog from "../componentsAdmin/editBlog";
 import '../styles/output.css';
-import Published from "../componentsAdmin/published";
+// import Published from "../componentsAdmin/published";
 
 function Posts() {
     return (
-        <div>
-            <h1>Posts</h1>
-            <EditBlog />
-            <Published />
-        </div>
+            <div class="flex ...">
+                <div class="flex-none w-14 h-14 ...">
+                    
+                </div>
+                <div class="grow h-14 ...">
+                    <EditBlog />
+                </div>
+                <div class="flex-none w-14 h-14 ...">
+                    
+                </div>
+            </div>
     )
 }
 
