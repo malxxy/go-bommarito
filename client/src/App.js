@@ -23,9 +23,9 @@ import Discover from './components/pages/Discover';
 // imports for admin page
 import AdminNav from "./componentsAdmin/adminNav";
 import AdminAside from "./componentsAdmin/adminAside";
-// import AdminHome from "./pagesAdmin/AdminHome";
+import AdminHome from "./pagesAdmin/AdminHome";
 // import Categories from './pagesAdmin/Categories';
-import Posts from './pagesAdmin/Posts';
+// import Posts from './pagesAdmin/Posts';
 import AdminFooter from "./componentsAdmin/adminFooter";
 
 // Construct our main GraphQL API endpoint
@@ -76,22 +76,22 @@ function App() {
         {/* </Switch> */}
       </Routes>
      {/* /* Layout for main admin page */}
-     <AdminNav />
-     <div className="grid grid-cols-12">
-      <div className="col-span-3 h-full">
-        <AdminAside />
+      <AdminNav />
+      <div className="grid grid-cols-12 h-full">
+          <div className="col-span-3 h-screen">
+            <AdminAside />
+          </div>
+        <div className="col-span-9 bg-mainBlue h-screen">
+          {/* <Routes>
+            <Route path="/Posts" element={<Posts />}/>
+            <Route path="/Categories" element={<Categories />}/>
+            <Route path="/AdminHome" element={<AdminHome />}/>
+          </Routes> */}
+          <AdminHome />
+        </div>
       </div>
-      <div className="col-span-9 bg-mainBlue">
-        {/* <Routes>
-          <Route path="/Posts" element={<Posts />}/>
-          <Route path="/Categories" element={<Categories />}/>
-          <Route path="/AdminHome" element={<AdminHome />}/>
-        </Routes> */}
-        <Posts />
-      </div>
-     </div>
-     </Router>
-     <AdminFooter />
+      </Router>
+      <AdminFooter />
      </ApolloProvider>
   );
 }
