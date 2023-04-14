@@ -21,7 +21,6 @@ import People from './components/pages/People';
 import ArtCulture from './components/pages/ArtCulture'; 
 import Discover from './components/pages/Discover'; 
 // imports for admin page
-// import React, {useState} from 'react';
 // import AdminHome from "./pages/AdminHome";
 // import Posts from "./pages/Posts";
 // import Categories from "./pages/Categories";
@@ -57,39 +56,33 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <Router>
-     <Navbar />
-     {/* <Hero /> */}
-     <Routes>
-      {/* <Switch> */}
-        <Route path="/discover" element ={<Discover />} />
-        <Route path="/San Diego" element={<SanDiego />}/> 
-        <Route path="/FoodDrink" element={<FoodDrink />}/>
-        <Route path="/Lifestyle" element={<Lifestyle />}/>
-        <Route path="/Destinations" element={<Destinations />}/>
-        <Route path="/Sports" element={<Sports />}/>
+    <Navbar />
+    {/* <Hero /> */}
+    <Routes>
+    {/* <Switch> */}
+         <Route path="/discover" element ={<Discover />} />
+         <Route path="/San Diego" element={<SanDiego />}/> 
+         <Route path="/FoodDrink" element={<FoodDrink />}/>
+         <Route path="/Lifestyle" element={<Lifestyle />}/>
+         <Route path="/Destinations" element={<Destinations />}/>
+         <Route path="/Sports" element={<Sports />}/>
         <Route path="/People" element={<People />}/>
-        <Route path="/ArtCulture" element={<ArtCulture />}/>
-        <Route path="/signup" element={<Signup />}/>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/home" element ={<Hero />} />
-        <Route path= "/"  element={<Hero/>}/>
-     {/* </Switch> */}
-     </Routes>
-    </Router>
-    </ApolloProvider>
-
-  // admin logic
-    //   <div>
-    //   <AdminNav />
-    //   <AdminAside />
-    //   <div>
-    //     {/* Logic to display one of 3 pages */}
-    //     <AdminHome />
-    //     <Posts />
-    //     <Categories />
-    //   </div>
-    //   <AdminFooter />
-    // </div>
+         <Route path="/ArtCulture" element={<ArtCulture />}/>
+         <Route path="/signup" element={<Signup />}/>
+         <Route path="/login" element={<Login />}/>
+         <Route path="/home" element ={<Hero />} />
+         <Route path= "/"  element={<Hero/>}/>
+      {/* </Switch> */}
+      </Routes>
+     </Router>
+     {/* Layout for main admin page
+     AdminNav
+     AdminHome
+     Categories
+     Posts
+     AdminFooter
+     */}
+     </ApolloProvider>
   );
 }
 
