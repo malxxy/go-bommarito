@@ -24,6 +24,7 @@ import Discover from './components/pages/Discover';
 // import AdminHome from "./pages/AdminHome";
 // import Posts from "./pages/Posts";
 // import Categories from "./pages/Categories";
+import Layout from "./pagesAdmin/Layout";
 import AdminNav from "./componentsAdmin/adminNav";
 import AdminAside from "./componentsAdmin/adminAside";
 import AdminFooter from "./componentsAdmin/adminFooter";
@@ -79,6 +80,7 @@ function App() {
      {/* /* Layout for main admin page */}
      <AdminNav />
      <AdminAside />
+     <Layout />
      <AdminFooter />
      </ApolloProvider>
   );

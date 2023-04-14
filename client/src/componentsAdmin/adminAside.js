@@ -5,7 +5,7 @@ function AdminAside() {
         <div className="relative bg-mainWhite p-4 w-80">
             <nav>
                 <div className="bg-mainWhite">
-                    <ul className="w-80">
+                    <ul className="w-60">
                         <li className="pt-3"> 
                             <a href="#Posts" className="p-4 text-lg font-semibold text-grey">
                                 Posts
