@@ -61,16 +61,16 @@ function App() {
     <ApolloProvider client={client}>
     <Router>
     <Navbar />
-    <Hero />
+    {/* <Hero /> */}
     <Routes>
-      {/* <Switch> */}
+       {/* <Switch> */}
          <Route path="/discover" element ={<Discover />} />
          <Route path="/San Diego" element={<SanDiego />}/> 
          <Route path="/FoodDrink" element={<FoodDrink />}/>
          <Route path="/Lifestyle" element={<Lifestyle />}/>
          <Route path="/Destinations" element={<Destinations />}/>
          <Route path="/Sports" element={<Sports />}/>
-        <Route path="/People" element={<People />}/>
+         <Route path="/People" element={<People />}/>
          <Route path="/ArtCulture" element={<ArtCulture />}/>
          <Route path="/signup" element={<Signup />}/>
          <Route path="/login" element={<Login />}/>
@@ -78,6 +78,7 @@ function App() {
          <Route path= "/"  element={<Hero/>}/>
         {/* </Switch> */}
       </Routes>
+    </Router >
      {/* /* Layout for main admin page */}
       <AdminNav />
       <div className="grid grid-cols-12 h-full">
@@ -85,18 +86,19 @@ function App() {
             <AdminAside />
           </div>
         <div className="col-span-9 bg-mainBlue h-screen">
-          <Routes>
-            <Route path="/Posts" element={<Posts />}/>
-            <Route path="/Categories" element={<Categories />}/>
-            <Route path="/AdminHome" element={<AdminHome />}/>
-            <Route path="/Media" element={<Media />}/>
-            <Route path="/Subscribers" element={<Subscribers />}/>
-            <Route path="/Account" element={<Account />}/>
-          </Routes>
-          <AdminHome />
+          <Router>
+            <Routes>
+              <Route path="/Posts" element={<Posts />}/>
+              <Route path="/Categories" element={<Categories />}/>
+              <Route path="/Media" element={<Media />}/>
+              <Route path="/Subscribers" element={<Subscribers />}/>
+              <Route path="/Account" element={<Account />}/>
+              <Route path="/AdminHome" element={<AdminHome />}/>
+              <Route path="/login" element={<Login />}/>
+            </Routes>
+          </Router>
         </div>
       </div>
-      </Router>
       <AdminFooter />
      </ApolloProvider>
   );

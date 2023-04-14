@@ -22,7 +22,7 @@ function AllCategories () {
             </tr>
           </thead>
           <tbody>
-            <tr class="bg-mainWhite border-y-4 border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
+            <tr class="bg-mainWhite border-b border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 Category name goes here
               </td>
@@ -33,7 +33,7 @@ function AllCategories () {
               <FaTrash />
               </td>
             </tr>
-            <tr class="bg-mainWhite border-y-4 border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
+            <tr class="bg-mainWhite border-b border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 Category name goes here
               </td>
@@ -44,7 +44,7 @@ function AllCategories () {
               <FaTrash />
               </td>
             </tr>
-            <tr class="bg-mainWhite border-y-4 border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
+            <tr class="bg-mainWhite border-b border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 Category name goes here
               </td>
