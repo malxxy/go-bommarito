@@ -26,7 +26,7 @@ import Discover from './components/pages/Discover';
 // import Categories from "./pages/Categories";
 import AdminNav from "./componentsAdmin/adminNav";
 // import AdminAside from "./componentsAdmin/adminFooter";
-// import AdminFooter from "./componentsAdmin/adminFooter";
+import AdminFooter from "./componentsAdmin/adminFooter";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -81,8 +81,8 @@ function App() {
      {/* AdminNav
      AdminHome
      Categories
-     Posts
-     AdminFooter */}
+     Posts*/}
+     <AdminFooter />
      </ApolloProvider>
   );
 }
