@@ -15,7 +15,7 @@ display: flex;
 flex-direction: column;
  align-items: center;
  justify-content: center;
- font-size: 20px;
+ font-size: 30px;
  color: grey;`
 const Desc = styled.p`
   font-size: 24px;
