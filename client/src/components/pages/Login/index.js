@@ -8,6 +8,7 @@ import { LOGIN_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 
 const Login = (props) => {
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
@@ -21,8 +22,6 @@ const Login = (props) => {
     });
   };
 
-  const navigate = useNavigate();
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -32,9 +31,9 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
-
+      
       // Redirect the user to the homepage or another page after logging in
-      navigate('../pagesAdmin/AdminHome'); 
+      navigate('/AdminHome'); 
     } catch (e) {
       console.error(e);
     }
