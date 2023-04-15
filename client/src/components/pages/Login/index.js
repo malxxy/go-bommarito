@@ -31,7 +31,7 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
-      
+
       // Redirect the user to the homepage or another page after logging in
       navigate('/AdminHome'); 
     } catch (e) {
@@ -54,7 +54,7 @@ const Login = (props) => {
             {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                <Link to="/AdminHome">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
