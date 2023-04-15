@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useMutation, ApolloProvider} from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
+// import { useHistory } from 'react-router-dom';
+
 // import '../../../login-signup.css';
 import Auth from '../../../utils/auth';
 
 const Login = (props) => {
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
@@ -19,7 +22,6 @@ const Login = (props) => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -29,10 +31,12 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
+      
+      // Redirect the user to the homepage or another page after logging in
+      navigate('/AdminHome'); 
     } catch (e) {
       console.error(e);
     }
-
     // clear form values
     setFormState({
       email: '',
