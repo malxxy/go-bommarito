@@ -21,19 +21,22 @@ import People from './components/pages/People';
 import ArtCulture from './components/pages/ArtCulture'; 
 import Discover from './components/pages/Discover'; 
 // imports for admin page
-// import AdminHome from "./pages/AdminHome";
-// import Posts from "./pages/Posts";
-// import Categories from "./pages/Categories";
-// import AdminNav from "./componentsAdmin/adminNav";
-// import AdminAside from "./componentsAdmin/adminFooter";
-// import AdminFooter from "./componentsAdmin/adminFooter";
+import AdminNav from "./componentsAdmin/adminNav";
+import AdminAside from "./componentsAdmin/adminAside";
+import AdminHome from "./pagesAdmin/AdminHome";
+import Categories from './pagesAdmin/Categories';
+import Posts from './pagesAdmin/Posts';
+import AdminFooter from "./componentsAdmin/adminFooter";
+import Subscribers from './pagesAdmin/Subscribers';
+import Media from './pagesAdmin/Media';
+import Account from './pagesAdmin/Account';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
 });
 
-// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+//Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
   const token = localStorage.getItem('id_token');
@@ -60,29 +63,43 @@ function App() {
     <Navbar />
     {/* <Hero /> */}
     <Routes>
-    {/* <Switch> */}
+       {/* <Switch> */}
          <Route path="/discover" element ={<Discover />} />
          <Route path="/San Diego" element={<SanDiego />}/> 
          <Route path="/FoodDrink" element={<FoodDrink />}/>
          <Route path="/Lifestyle" element={<Lifestyle />}/>
          <Route path="/Destinations" element={<Destinations />}/>
          <Route path="/Sports" element={<Sports />}/>
-        <Route path="/People" element={<People />}/>
+         <Route path="/People" element={<People />}/>
          <Route path="/ArtCulture" element={<ArtCulture />}/>
          <Route path="/signup" element={<Signup />}/>
          <Route path="/login" element={<Login />}/>
          <Route path="/home" element ={<Hero />} />
          <Route path= "/"  element={<Hero/>}/>
-      {/* </Switch> */}
+        {/* </Switch> */}
       </Routes>
-     </Router>
-     {/* Layout for main admin page
-     AdminNav
-     AdminHome
-     Categories
-     Posts
-     AdminFooter
-     */}
+    </Router >
+     {/* /* Layout for main admin page */}
+      <AdminNav />
+      <div className="grid grid-cols-12 h-full">
+          <div className="col-span-3 h-screen">
+            <AdminAside />
+          </div>
+        <div className="col-span-9 bg-mainBlue h-screen">
+          <Router>
+            <Routes>
+              <Route path="/Posts" element={<Posts />}/>
+              <Route path="/Categories" element={<Categories />}/>
+              <Route path="/Media" element={<Media />}/>
+              <Route path="/Subscribers" element={<Subscribers />}/>
+              <Route path="/Account" element={<Account />}/>
+              <Route path="/AdminHome" element={<AdminHome />}/>
+              <Route path="/login" element={<Login />}/>
+            </Routes>
+          </Router>
+        </div>
+      </div>
+      <AdminFooter />
      </ApolloProvider>
   );
 }

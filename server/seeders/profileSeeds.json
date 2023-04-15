@@ -26,5 +26,12 @@
         "username": "tommyhanks1",
         "email": "tomhanks@gmail.com",
         "password": "password12345!"
+    },
+    {
+        "firstName": "Jesse",
+        "lastName": "Rose",
+        "username": "jessejohnes54",
+        "email": "jessejohnes54@gmail.com",
+        "password": "password12345!"
     }
 ]

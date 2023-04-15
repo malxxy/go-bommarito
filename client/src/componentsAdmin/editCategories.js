@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles/forms.css';
+import '../styles/output.css';
 
 function EditCategories() {
   // Create state variables for the fields in the form
@@ -28,19 +28,23 @@ function EditCategories() {
   };
 
   return (
-    <div>
-        <card>
-            <form className="form">
+    <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-10'>
+        <div className="flex-grow">
+          <div>
+          <h1 className='justify-center text-xl block m-5'>Add a Category</h1>
+            <form className='form'>
                 <input
                 value={category}
                 name="category"
                 onChange={handleInputChange}
                 type="text"
-                placeholder="New Category Title"
+                placeholder="New Category"
+                className='form-input block'
                 />
-                <button type="button" onClick={handleFormSubmit}>Submit Catgeory</button>
+            <button className='bg-mainBlue hover:bg-darkestBlue rounded-md p-2 my-3 text-mainWhite' onClick={handleFormSubmit}>Add Category</button>
             </form>
-      </card>
+        </div>
+      </div>
     </div>
   );
 }
