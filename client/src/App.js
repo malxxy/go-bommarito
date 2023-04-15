@@ -59,7 +59,7 @@ const client = new ApolloClient({
 
 function App() {
   // let { isloggedin } = this.state
-  if(AuthService.loggedIn.token) {
+  if(AuthService.loggedIn()) {
     console.log("logintest",AuthService.loggedIn.token)
   return (
       <ApolloProvider client={client}>
