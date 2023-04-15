@@ -1,5 +1,5 @@
-import React, { useState, useHistory } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useMutation, ApolloProvider} from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
 // import { useHistory } from 'react-router-dom';
@@ -11,8 +11,6 @@ const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
-  const history = useHistory();
-
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -23,21 +21,9 @@ const Login = (props) => {
     });
   };
 
-  // submit form
+  const navigate = useNavigate();
+
   const handleFormSubmit = async (event) => {
-    // event.preventDefault();
-    // console.log(formState);
-    // try {
-    //   const { data } = await login({
-    //     variables: { ...formState },
-    //   });
-
-    //   Auth.login(data.login.token);
-    // } catch (e) {
-    //   console.error(e);
-    // }
-
-//
     event.preventDefault();
     console.log(formState);
     try {
@@ -48,12 +34,10 @@ const Login = (props) => {
       Auth.login(data.login.token);
 
       // Redirect the user to the homepage or another page after logging in
-      history.push('../../../pagesAdmin/AdminHome'); // Replace '/' with the path of the page you want to redirect to
+      navigate('../pagesAdmin/AdminHome'); 
     } catch (e) {
       console.error(e);
     }
-//
-
     // clear form values
     setFormState({
       email: '',
