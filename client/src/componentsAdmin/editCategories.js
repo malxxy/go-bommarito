@@ -28,7 +28,7 @@ function EditCategories() {
   };
 
   return (
-    <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl'>
+    <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-10'>
         <div className="flex-grow">
           <div>
           <h1 className='justify-center text-xl block m-5'>Add a Category</h1>

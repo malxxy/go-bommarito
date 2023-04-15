@@ -34,10 +34,10 @@ function EditBlog() {
   };
 
   return (
-    <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl'>
+    <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-5'>
         <div className="flex-grow">
           <div>
-          <h1 className='justify-center text-xl block m-5'>Edit Blog Post</h1>
+          <h1 className='text-xl block m-5'>Edit Blog Post</h1>
             <form className='form'>
                 <input
                 value={blogTitle}
@@ -56,7 +56,7 @@ function EditBlog() {
                 className='form-input block'
                 />
                 <input
-                className='form-input block w-full h-200 m-2'
+                className='form-input block'
                 value={blogText}
                 name="blogText"
                 onChange={handleInputChange}

@@ -4,7 +4,7 @@ function AdminHome () {
     return ( 
         <div className="mt-10 flex ...">
             <div className="flex-none w-14 h-14 ..."></div>
-            <div className="grow h-14 ...">
+            <div className="flex-grow max-w-100 h-14 ...">
                 <h1 className="mx-3 text-mainWhite text-2xl">Recent Blog Posts</h1>
                 <div className="flex">
                 <div class="max-w-sm mx-3 my-5 h-auto rounded overflow-hidden drop-shadow-2xl bg-mainWhite">
@@ -16,9 +16,9 @@ function AdminHome () {
                             </p>
                         </div>
                         <div class="px-6 pt-4 pb-2">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Catgeory 1</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Category 2</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Category 3</span>
+                            <span class="inline-block bg-mainBlue rounded-full px-3 py-1 text-sm font-semibold text-mainWhite mr-2 mb-2">Travel</span>
+                            <span class="inline-block bg-mainBlue rounded-full px-3 py-1 text-sm font-semibold text-mainWhite mr-2 mb-2">Italy</span>
+                            <span class="inline-block bg-mainBlue rounded-full px-3 py-1 text-sm font-semibold text-mainWhite mr-2 mb-2">Accomodations</span>
                         </div>
                 </div>
 
@@ -31,9 +31,8 @@ function AdminHome () {
                             </p>
                         </div>
                         <div class="px-6 pt-4 pb-2">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Catgeory 1</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Category 2</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Category 3</span>
+                        <span class="inline-block bg-mainBlue rounded-full px-3 py-1 text-sm font-semibold text-mainWhite mr-2 mb-2">Travel</span>
+                            <span class="inline-block bg-mainBlue rounded-full px-3 py-1 text-sm font-semibold text-mainWhite mr-2 mb-2">Food + Drink</span>
                         </div>
                 </div>
                 </div>

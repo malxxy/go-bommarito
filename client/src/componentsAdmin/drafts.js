@@ -3,10 +3,10 @@ import { FaEdit, FaTrash} from 'react-icons/fa';
 
 function Drafts () {
     return (
-        <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl'>
+        <div className='bg-mainWhite rounded-lg drop-shadow-2xl my-5'>
         <div className="flex-grow">
           <div>
-          <h1 className='justify-center text-xl block m-5'>Drafted Blog Posts</h1>
+          <h1 className='text-xl block m-5'>Drafted Blog Posts</h1>
           <table className="min-w-full">
           <thead class="bg-lightGrey border-b">
             <tr>

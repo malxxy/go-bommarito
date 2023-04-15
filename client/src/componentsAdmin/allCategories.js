@@ -3,11 +3,12 @@ import { FaEdit, FaTrash} from 'react-icons/fa';
 
 function AllCategories () {
     return (
-        <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl'>
+        <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-5'>
         <div className="flex-grow">
           <div>
-          <h1 className='justify-center text-xl block m-5'>Drafted Blog Posts</h1>
-          <table className="min-w-full">
+          <h1 className='justify-center text-xl block m-5'>Categories</h1>
+          <div>
+          <table className="w-full">
           <thead class="bg-lightGrey border-b">
             <tr>
               <th scope="col" class="text-l font-medium text-mainBlack px-6 py-4 text-left">
@@ -57,6 +58,7 @@ function AllCategories () {
             </tr>
           </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>
