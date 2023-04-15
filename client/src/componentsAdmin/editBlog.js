@@ -1,14 +1,5 @@
-// edit/new blog page
-
-// title input
-// author input
-// description input
-// text input with rich text editor
-
-//button to post blog 
-
 import React, { useState } from 'react';
-// import './style.css';
+import '../styles/output.css';
 
 function EditBlog() {
   // Create state variables for the fields in the form
@@ -43,33 +34,39 @@ function EditBlog() {
   };
 
   return (
-    <div>
-        <card>
-            <form className="form">
+    <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-5'>
+        <div className="flex-grow">
+          <div>
+          <h1 className='text-xl block m-5'>Edit Blog Post</h1>
+            <form className='form'>
                 <input
                 value={blogTitle}
                 name="blogTitle"
                 onChange={handleInputChange}
                 type="text"
                 placeholder="Blog Title"
+                className='form-input block'
                 />
                 <input
                 value={blogAuthor}
                 name="blogAuthor"
                 onChange={handleInputChange}
                 type="text"
-                placeholder="Author"
+                placeholder="Blog Author"
+                className='form-input block'
                 />
                 <input
+                className='form-input block'
                 value={blogText}
                 name="blogText"
                 onChange={handleInputChange}
                 type="text"
                 placeholder="Write blog here"
                 />
-                <button type="button" onClick={handleFormSubmit}>Submit</button>
+            <button className='bg-mainBlue hover:bg-darkestBlue rounded-md p-2 my-3 text-mainWhite' onClick={handleFormSubmit}>Publish</button>
             </form>
-      </card>
+        </div>
+      </div>
     </div>
   );
 }
