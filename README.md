@@ -42,3 +42,10 @@
   ## Questions
   If you have any questions about the repo or project, please contact me directly at maliayraguen@gmail.com.
 
+  1. create the collection
+  2. name it the same as local
+  3. Replace teh mongodb uri value in the env
+  5. whitelist all the IP ranges (button to click - allow from anywhere - it will add 0.0.0.0/0 range)
+  6. seed everything using the seed file
+  7. deploy to heroku - in heroku, set the same variable as the mongoDB uri
+
