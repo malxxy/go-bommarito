@@ -18,7 +18,7 @@ color: white;
 background-color: #333;
 text-align: center;
 margin-left: 150px;
-margin-top: 100px;
+margin-top: 95px;
 `
 
 function Categories() {
