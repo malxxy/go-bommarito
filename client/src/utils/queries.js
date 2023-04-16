@@ -24,6 +24,10 @@ export const QUERY_SINGLE_PROFILE = gql`
     lastName
     username
     email
+    blogs {
+    _id
+    blogTitle
+    }
   }
 }
 `;
