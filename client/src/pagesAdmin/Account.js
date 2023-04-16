@@ -4,8 +4,6 @@ import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_PROFILE } from '../utils/queries';
 import AuthService from '../utils/auth';
 
-
-
 function Account () {
 
  const myprofile = AuthService.getProfile()
