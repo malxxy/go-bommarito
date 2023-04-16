@@ -1,8 +1,17 @@
 // published
 import '../styles/output.css';
 import { FaEdit, FaTrash} from 'react-icons/fa';
+import { useQuery } from '@apollo/client';
+import { QUERY_BLOGS } from '../utils/queries';
 
 function Published () {
+  const getBlogs = useQuery(QUERY_BLOGS);
+  console.log("getBlogs query",getBlogs.data);
+  // const { data } = useQuery(QUERY_BLOGS);
+  // // Use optional chaining to check if data exists and if it has a thoughts property. If not, return an empty array to use.
+  // const blogs = data?.blogs || [];
+  // console.log("blogs",blogs)
+
     return (
         <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-5'>
         <div className="flex-grow">
