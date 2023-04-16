@@ -58,6 +58,7 @@ const client = new ApolloClient({
 
 
 function App() {
+  console.log(AuthService.getProfile())
   // let { isloggedin } = this.state
   if(AuthService.loggedIn()) {
     console.log("logintest",AuthService.loggedIn.token)

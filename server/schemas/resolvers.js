@@ -9,7 +9,7 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
       profiles: async () => {
-        return Profile.find()
+        return Profile.find().populate('blogs')
       },
       profile: async (parent, { username }) => {
         return Profile.findOne({ username }).populate('blogs');
