@@ -58,7 +58,8 @@ const client = new ApolloClient({
 function App() {
   // let { isloggedin } = this.state
   if(AuthService.loggedIn()) {
-    console.log("logintest",AuthService.loggedIn.token)
+    console.log("logintest",AuthService.loggedIn())
+    console.log("Getprofile",AuthService.getProfile())
   return (
       <ApolloProvider client={client}>
       <Router>
