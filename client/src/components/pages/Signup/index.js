@@ -10,7 +10,9 @@ const Signup = () => {
   
   const navigate = useNavigate();
   const [formState, setFormState] = useState({
-    name: '',
+    username: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
   });
@@ -65,9 +67,27 @@ const Signup = () => {
                 <input
                   className="form-input"
                   placeholder="Your username"
-                  name="name"
+                  name="username"
                   type="text"
-                  value={formState.name}
+                  value={formState.username}
+                  onChange={handleChange}
+                />
+                <br></br>
+                <input
+                  className="form-input"
+                  placeholder="First name"
+                  name="firstName"
+                  type="text"
+                  value={formState.firstName}
+                  onChange={handleChange}
+                />
+                <br></br>
+                <input
+                  className="form-input"
+                  placeholder="Last name"
+                  name="lastName"
+                  type="text"
+                  value={formState.lastName}
                   onChange={handleChange}
                 />
                 <br></br>
@@ -90,7 +110,7 @@ const Signup = () => {
                 />
                 <br></br>
                 <button
-                  className="btn btn-block btn-info"
+                  className="mg-mainWhite btn btn-block btn-info"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -107,7 +127,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-      <footer class="footer"> 
+      <footer className="footer"> 
               <p>© 2023 GoBommarito. All rights reserved.</p>
       </footer>
     </main>
