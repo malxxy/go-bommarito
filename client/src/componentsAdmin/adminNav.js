@@ -1,6 +1,11 @@
 import '../styles/output.css';
+import Auth from "../../src/utils/auth";
 
 function AdminNav () {
+    const logout = (event) => {
+        event.preventDefault();
+        Auth.logout();
+      };
     return (
         <nav className="bg-mainWhite mx-auto flex items-center justify-between p-6 lg:px-8">
             <div className="flex lg:flex-1">
@@ -19,8 +24,8 @@ function AdminNav () {
                 <a href="Categories" className="p-4 rounded-md text-lg font-semibold hover:bg-mainBlue hover:text-mainWhite leading-6 text-gray-900">
                     Categories</a>
             </div>
-            <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                <a href="login" className="p-4 rounded-md text-lg font-semibold leading-6 text-gray-900 hover:bg-mainBlue hover:text-mainWhite">
+            <div className="hidden lg:flex lg:flex-1 lg:justify-end" onClick={logout}>
+                <a href="/" className="p-4 rounded-md text-lg font-semibold leading-6 text-gray-900 hover:bg-mainBlue hover:text-mainWhite">
                 Log out <span aria-hidden="true">&rarr;</span>
                 </a>
             </div>
