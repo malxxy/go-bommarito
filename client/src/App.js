@@ -30,6 +30,8 @@ import AdminFooter from "./componentsAdmin/adminFooter";
 import Subscribers from './pagesAdmin/Subscribers';
 import Media from './pagesAdmin/Media';
 import Account from './pagesAdmin/Account';
+import AuthService from './utils/auth';
+import { useAuth } from './hooks/useAuth';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -57,36 +59,20 @@ const client = new ApolloClient({
 
 
 function App() {
+  // let { isloggedin } = this.state
+  const { loggedIn } = useAuth();
+
+  if(loggedIn) {
+    console.log("logintest",AuthService.loggedIn.token)
   return (
-    <ApolloProvider client={client}>
-    <Router>
-    <Navbar />
-    {/* <Hero /> */}
-    <Routes>
-       {/* <Switch> */}
-         <Route path="/discover" element ={<Discover />} />
-         <Route path="/San Diego" element={<SanDiego />}/> 
-         <Route path="/FoodDrink" element={<FoodDrink />}/>
-         <Route path="/Lifestyle" element={<Lifestyle />}/>
-         <Route path="/Destinations" element={<Destinations />}/>
-         <Route path="/Sports" element={<Sports />}/>
-         <Route path="/People" element={<People />}/>
-         <Route path="/ArtCulture" element={<ArtCulture />}/>
-         <Route path="/signup" element={<Signup />}/>
-         <Route path="/login" element={<Login />}/>
-         <Route path="/home" element ={<Hero />} />
-         <Route path= "/"  element={<Hero/>}/>
-        {/* </Switch> */}
-      </Routes>
-    </Router >
-     {/* /* Layout for main admin page */}
+      <ApolloProvider client={client}>
+      <Router>
       <AdminNav />
       <div className="grid grid-cols-12 h-full">
           <div className="col-span-3 h-screen">
             <AdminAside />
           </div>
         <div className="col-span-9 bg-mainBlue h-screen">
-          <Router>
             <Routes>
               <Route path="/Posts" element={<Posts />}/>
               <Route path="/Categories" element={<Categories />}/>
@@ -96,12 +82,34 @@ function App() {
               <Route path="/AdminHome" element={<AdminHome />}/>
               <Route path="/login" element={<Login />}/>
             </Routes>
-          </Router>
         </div>
       </div>
       <AdminFooter />
+      </Router>
      </ApolloProvider>
-  );
-}
+    )} else {
+      console.log("NOT loggged in?", AuthService.loggedIn.token)
+      return (
+      <ApolloProvider client={client}>
+      <Router>
+      <Navbar />
+      <Routes>
+           <Route path="/discover" element ={<Discover />} />
+           <Route path="/San Diego" element={<SanDiego />}/> 
+           <Route path="/FoodDrink" element={<FoodDrink />}/>
+           <Route path="/Lifestyle" element={<Lifestyle />}/>
+           <Route path="/Destinations" element={<Destinations />}/>
+           <Route path="/Sports" element={<Sports />}/>
+           <Route path="/People" element={<People />}/>
+           <Route path="/ArtCulture" element={<ArtCulture />}/>
+           <Route path="/signup" element={<Signup />}/>
+           <Route path="/login" element={<Login />}/>
+           <Route path="/home" element ={<Hero />} />
+           <Route path= "/"  element={<Hero/>}/>
+        </Routes>
+      </Router >
+      </ApolloProvider>
+    )};
+};
 
 export default App;
