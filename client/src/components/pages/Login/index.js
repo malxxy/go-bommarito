@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useMutation, ApolloProvider} from '@apollo/client';
 import { LOGIN_USER } from '../../../utils/mutations';
 // import { useHistory } from 'react-router-dom';
@@ -8,8 +8,12 @@ import { LOGIN_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 
 const Login = (props) => {
+  // const navigate = useNavigate();
+  // const [formState, setFormState] = useState({ email: '', password: '' });
+  // const [login, { error, data }] = useMutation(LOGIN_USER);
+
   const navigate = useNavigate();
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ username: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -33,13 +37,13 @@ const Login = (props) => {
       Auth.login(data.login.token);
 
       // Redirect the user to the homepage or another page after logging in
-      navigate('/'); 
+      navigate('/AdminHome'); 
     } catch (e) {
       console.error(e);
     }
     // clear form values
     setFormState({
-      email: '',
+      username: '',
       password: '',
     });
   };
@@ -51,19 +55,26 @@ const Login = (props) => {
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
-            {data ? (
+            {/* {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/AdminHome">back to the homepage.</Link>
-              </p>
-            ) : (
+                <Link to="/AdminHome"> to the admin homepage.</Link>
+              </p> */}
+
+              {data && navigate('/AdminHome')} {/* Add this line to redirect the user if data is not null */}
+              <div className="col-12 col-lg-10">
+                {/* ... */}
+              </div>
+
+
+            {/* ) : ( */}
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
+                  placeholder="Your username"
+                  name="username"
+                  type="username"
+                  value={formState.username}
                   onChange={handleChange}
                 />
                 <br></br>
@@ -84,7 +95,7 @@ const Login = (props) => {
                   Submit
                 </button>
               </form>
-            )}
+            {/* )} */}
 
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
