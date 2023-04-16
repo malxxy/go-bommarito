@@ -2,12 +2,21 @@ import '../styles/output.css';
 import { FaEdit, FaTrash} from 'react-icons/fa';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_PROFILE } from '../utils/queries';
+import AuthService from '../utils/auth';
+
+
 
 function Account () {
 
-  const { data } = useQuery(QUERY_SINGLE_PROFILE);
+ const myprofile = AuthService.getProfile()
+ console.log("profile", myprofile.data.username)
 
-  const profile = data?.profiles || [];
+  const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
+    variables: { username: myprofile.data.username},
+  });
+
+  const profile = data?.profile || {};
+  console.log("userinfo", data)
     return (
         <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl m-8'>
         <div key={profile._id} className="flex-grow m-5 p-2">
