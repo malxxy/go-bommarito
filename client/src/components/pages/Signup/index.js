@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import '../../../login-signup.css';
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 
 const Signup = () => {
+  
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -23,22 +26,29 @@ const Signup = () => {
     });
   };
 
-  // submit form
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
-
     try {
       const { data } = await addProfile({
         variables: { ...formState },
       });
 
       Auth.login(data.addProfile.token);
+
+      // Redirect the user to the homepage or another page after logging in
+      navigate('/AdminHome'); 
     } catch (e) {
       console.error(e);
     }
+    // clear form values
+    setFormState({
+      username: '',
+      password: '',
+    });
   };
-
+ 
   return (
     <main className="flex-row justify-center mb-4 page">
       <div className="col-12 col-lg-10">

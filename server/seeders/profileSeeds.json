@@ -4,7 +4,7 @@
         "lastName": "Smith",
         "username": "kacysmith",
         "email": "kacysmith@test.com",
-        "password": "password12345!"
+        "password": "const navigate = useNavigate();"
     },
     {
         "firstName": "Gerry",
