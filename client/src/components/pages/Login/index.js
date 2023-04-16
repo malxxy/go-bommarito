@@ -37,7 +37,7 @@ const Login = (props) => {
       Auth.login(data.login.token);
 
       // Redirect the user to the homepage or another page after logging in
-      navigate('/AdminHome'); 
+      navigate('/'); 
     } catch (e) {
       console.error(e);
     }

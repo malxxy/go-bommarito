@@ -31,7 +31,6 @@ import Subscribers from './pagesAdmin/Subscribers';
 import Media from './pagesAdmin/Media';
 import Account from './pagesAdmin/Account';
 import AuthService from './utils/auth';
-import { useAuth } from './hooks/useAuth';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -60,9 +59,7 @@ const client = new ApolloClient({
 
 function App() {
   // let { isloggedin } = this.state
-  const { loggedIn } = useAuth();
-
-  if(loggedIn) {
+  if(AuthService.loggedIn()) {
     console.log("logintest",AuthService.loggedIn.token)
   return (
       <ApolloProvider client={client}>
