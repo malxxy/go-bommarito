@@ -49,3 +49,6 @@
   6. seed everything using the seed file
   7. deploy to heroku - in heroku, set the same variable as the mongoDB uri
 
+  - link blogs to profiles
+  
+

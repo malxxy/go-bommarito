@@ -19,7 +19,7 @@ db.once('open', async () => {
           { username: blogAuthor },
           {
             $addToSet: {
-              Blog: _id,
+              blogs: _id,
             },
           }
         );

@@ -30,15 +30,10 @@ const profileSchema = new Schema({
     type: String,
     required: true,
     minlength: 8,
-    /* validate: {
-      validator: isValidPassword,
-      message: 'Password must have at least: 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.'
-    }*/
   },
-  blog: [
+  blogs: [
     {
-      type: String,
-      trim: true,
+      type: Schema.Types.ObjectId,
       ref: 'Blog'
     },
   ],
