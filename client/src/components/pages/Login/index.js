@@ -13,7 +13,7 @@ const Login = (props) => {
   // const [login, { error, data }] = useMutation(LOGIN_USER);
 
   const navigate = useNavigate();
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ username: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -37,13 +37,13 @@ const Login = (props) => {
       Auth.login(data.login.token);
 
       // Redirect the user to the homepage or another page after logging in
-      navigate('/'); 
+      navigate('/AdminHome'); 
     } catch (e) {
       console.error(e);
     }
     // clear form values
     setFormState({
-      email: '',
+      username: '',
       password: '',
     });
   };
@@ -71,10 +71,10 @@ const Login = (props) => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
+                  placeholder="Your username"
+                  name="username"
+                  type="username"
+                  value={formState.username}
                   onChange={handleChange}
                 />
                 <br></br>
