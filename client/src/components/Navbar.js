@@ -11,15 +11,45 @@ export const Nav = styled.nav`
     z-index: 10;
 `;
 
+export const Logo = styled.img`
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-left: 20px;
+    object-fit: contain;
+    @media screen and (max-width: 768px) {
+        width: 100%; /* make the logo width 100% for smaller screens */
+        height: auto; /* keep the logo aspect ratio */
+        position: absolute; /* move the logo to the top left corner */
+        top: 0;
+        left: 0;
+        padding: 10px;
+    }
+    @media screen and (min-width: 2560px) and (min-height: 1600px){
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+    }
+`;
+
 export const NavLink = styled(Link)`
-    color: white;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-    cursor: pointer;
-    `;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 1rem;
+  width: auto;
+
+  @media screen and (max-width: 768px) {
+    margin: 0 0.5rem;
+  }
+`;
 
 export const Bars = styled(FaBars)`
     display: none;

@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <Nav>
         <NavLink to="/"> 
-        <img className="w-[300px]"src="../Logo.png" alt="logo"/>
+        <img className="w-[400px]"  src="../Logo.png" alt="logo"/>
         </NavLink>
         <Bars />
         <NavMenu>
@@ -22,15 +22,15 @@ function Navbar() {
             <NavLink to="/FoodDrink" activeStyle>
             Food + Drink
             </NavLink>
-            <NavLink to="/Lifestyle" activeStyle>
+            {/* <NavLink to="/Lifestyle" activeStyle>
             Lifestyle
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/Destinations" activeStyle>
             Destinations
             </NavLink>
-            <NavLink to="/Sports" activeStyle>
+            {/* <NavLink to="/Sports" activeStyle>
             Sports
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/People" activeStyle>
             People
             </NavLink>
