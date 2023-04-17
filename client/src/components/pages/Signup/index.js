@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import '../../../login-signup.css';
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../../../utils/mutations';
@@ -27,6 +28,8 @@ const Footer = styled.p`
 `;
 
 const Signup = () => {
+  
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({
     username: '',
     firstName: '',
@@ -46,22 +49,30 @@ const Signup = () => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
-
     try {
       const { data } = await addProfile({
         variables: { ...formState },
       });
 
       Auth.login(data.addProfile.token);
+
+      // Redirect the user to the homepage or another page after logging in
+      navigate('/AdminHome'); 
     } catch (e) {
       console.error(e);
     }
+    // clear form values
+    setFormState({
+      username: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+    });
   };
-
   return (
     <main className="flex-row justify-center mb-4 page">
       <div className="col-12 col-lg-10">
@@ -71,7 +82,7 @@ const Signup = () => {
             {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                <Link to="/AdminHome">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -142,7 +153,6 @@ const Signup = () => {
         <p>© 2023 GoBommarito. All rights reserved.</p>
       </Footer>
     </main>
-    
   );
 };
 
