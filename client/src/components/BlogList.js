@@ -19,9 +19,14 @@ const BlogList = ({ blogs, title }) => {
                   {blog.blogTitle} <br />
                 </h4>
                 <div className='bloginfo'>
-                <p>
-                  {blog.createdAt}
-                </p>
+                  <div>
+                    <h2>
+                      created by: {blog.blogAuthor}
+                    </h2>
+                    <p>
+                      {blog.createdAt}
+                    </p>
+                  </div>
                 </div>
                 <Link
                   className="btn btn-block btn-squared btn-light text-dark"
