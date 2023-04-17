@@ -65,13 +65,13 @@ const Signup = () => {
       console.error(e);
     }
     // clear form values
-    // setFormState({
-    //   username: '',
-    //   firstName: '',
-    //   lastName: '',
-    //   email: '',
-    //   password: '',
-    // });
+    setFormState({
+      username: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+     });
   };
   return (
     <ApolloProvider>
