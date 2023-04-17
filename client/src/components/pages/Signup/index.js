@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 import '../../../login-signup.css';
-import { useMutation } from '@apollo/client';
+import { useMutation, ApolloProvider } from '@apollo/client';
 import { ADD_PROFILE } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 
@@ -50,8 +50,8 @@ const Signup = () => {
       password: '',
     });
   };
- 
   return (
+    <ApolloProvider>
     <main className="flex-row justify-center mb-4 page">
       <div className="col-12 col-lg-10">
         <div className="card">
@@ -60,7 +60,7 @@ const Signup = () => {
             {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                <Link to="/AdminHome">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -131,7 +131,7 @@ const Signup = () => {
               <p>© 2023 GoBommarito. All rights reserved.</p>
       </footer>
     </main>
-    
+    </ApolloProvider>
   );
 };
 
