@@ -41,7 +41,7 @@ function Published () {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-mainWhite border-y-4 border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
+            <tr className="bg-mainWhite border-b border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 This is where blog title goes
               </td>
@@ -61,7 +61,7 @@ function Published () {
               <FaTrash />
               </td>
             </tr>
-            <tr className="bg-mainWhite border-y-4 border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
+            <tr className="bg-mainWhite border-b border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 This is where blog title goes
               </td>
