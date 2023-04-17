@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../../styles/singleblog.css'
+import { Link } from 'react-router-dom';
 
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
@@ -53,9 +54,20 @@ const Singleblog = () => {
                 </div>
             ))}
         </div>
+        <div className='addcomment'>
+            <div>
+                <button>Add a comment +</button>
+                
+                <p>
+                You need to be logged in to share your thoughts. Please{' '}
+                <Link to="/login"><span className='commentlink'>login</span></Link> or <Link to="/signup"><span className='commentlink'>signup</span></Link>
+                </p>
+            </div>
+        </div>
     </div>
-
+        
     </div>
+    
   );
 };
 
