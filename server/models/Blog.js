@@ -34,6 +34,10 @@ const blogSchema = new Schema({
         minlength: 1,
         maxlength: 500,
       },
+      commentAuthor: {
+        type: String,
+        required: true,
+      },
       createdAt: {
         type: Date,
         default: Date.now,
