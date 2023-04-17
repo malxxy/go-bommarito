@@ -17,8 +17,8 @@ db.once('open', async () => {
       // seeds all exisiting blog info
       for (let i = 0; i < blogSeeds.length; i++) {
         const { _id, blogAuthor } = await Blog.create(blogSeeds[i]);
-        console.log('blog', _id)
-        const user = await Profile.findOneAndUpdate(
+
+        await Profile.findOneAndUpdate(
           { username: blogAuthor },
           {
             $addToSet: {
