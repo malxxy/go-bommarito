@@ -64,11 +64,11 @@ function App() {
       <ApolloProvider client={client}>
       <Router>
       <AdminNav />
-      <div className="grid grid-cols-12 h-full">
+      <div className="grid grid-cols-12 h-full min-h-screen">
           <div className="col-span-3 bg-mainWhite border-b">
             <AdminAside />
           </div>
-        <div className="col-span-9 bg-mainBlue h-screen">
+        <div className="col-span-9 bg-mainBlue h-full min-h-screen">
             <Routes>
               <Route path="/Posts" element={<Posts />}/>
               <Route path="/Categories" element={<Categories />}/>

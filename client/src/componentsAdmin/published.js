@@ -5,12 +5,12 @@ import { FaEdit, FaTrash} from 'react-icons/fa';
 const Published = ({blogs}) => {
   if (!blogs.length) {
   return (
-  <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-5'>
-      <div className="flex-grow">
+  <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-6 max-w-full'>
+      <div className="flex-grow max-w-full">
         <div>
         <h1 className='text-xl block m-5'>Published Blog Posts</h1>
-        <table className="min-w-full">
-        <thead className="bg-lightGrey border-b">
+        <table>
+        <thead className="bg-lightGrey border-b max-w-full">
           <tr>
             <th scope="col" className="text-l font-medium text-mainBlack px-6 py-4 text-left">
               Blog Title
@@ -82,12 +82,12 @@ const Published = ({blogs}) => {
 }
 
   return (
-    <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-5'>
-    <div className="flex-grow">
-      <div>
+    <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-5 max-w-full'>
+    <div className="flex-grow max-w-full">
+      <div className="max-w-screen">
       <h1 className='text-xl block m-5'>Published Blog Posts</h1>
-      <table className="min-w-full">
-      <thead className="bg-lightGrey border-b">
+      <table>
+      <thead className="bg-lightGrey border-b max-w-full">
         <tr>
           <th scope="col" className="text-l font-medium text-mainBlack px-6 py-4 text-left">
             Blog Title
