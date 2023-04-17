@@ -14,7 +14,7 @@ import SanDiego from './components/pages/San Diego';
 import FoodDrink from './components/pages/FoodDrink';
 import Signup from './components/pages/Signup';
 import Login from './components/pages/Login';
-import Lifestyle from './components/pages/Lifestyle';
+
 import Destinations from './components/pages/Destinations';
 import Sports from './components/pages/Sports';
 import People from './components/pages/People';
@@ -51,7 +51,7 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache(), 
 });
 
 
@@ -93,7 +93,6 @@ function App() {
            <Route path="/discover" element ={<Discover />} />
            <Route path="/San Diego" element={<SanDiego />}/> 
            <Route path="/FoodDrink" element={<FoodDrink />}/>
-           <Route path="/Lifestyle" element={<Lifestyle />}/>
            <Route path="/Destinations" element={<Destinations />}/>
            <Route path="/Sports" element={<Sports />}/>
            <Route path="/People" element={<People />}/>

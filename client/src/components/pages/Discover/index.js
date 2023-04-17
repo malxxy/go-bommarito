@@ -76,7 +76,7 @@ const Img = styled.img`
         left: 30%;
         top: 150px;
        `
-        const Footer = styled.footer`
+        const Footer = styled.p`
         border: 1px solid black;
         border-radius: 17px;
         width: 170vh;
@@ -137,9 +137,7 @@ The gentle hills that make this landscape unique and turning with seasons, combi
               Rooms and apartments
 Our comfortable accommodations are part of an ancient structure made up of several farmhouses and a Fortified Parish Church dating back to the early years of the 1000th century.
 All the rooms are expertly restored immersed in the tranquility of the Sienese hills.
-For our guests we offer large equipped outdoor areas, access to the swimming pool, mountain bikes, table tennis, restaurant on request and many other activities.
-
-              </p>
+For our guests we offer large equipped outdoor areas, access to the swimming pool, mountain bikes, table tennis, restaurant on request and many other activities.  </p>
             </Aside>
             <Footer> 
             <p>© 2023 GoBommarito. All rights reserved.</p>
