@@ -1,18 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 
-
 const Main = styled.main`
-background: linear-gradient(to right, rgba(255,0,0,0), rgb(173, 216, 230));
-`
-const Content = styled.div``
+  background: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(173, 216, 230));
+`;
+
+const Content = styled.div``;
+
 const Title = styled.h1`
-display: flex;
-flex-direction: column;
- align-items: center;
- justify-content: center;
- font-size: 30px;
- color: grey;`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: grey;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+`;
+
 const Desc = styled.p`
   font-size: 24px;
   font-weight: 200;
@@ -24,12 +31,21 @@ const Desc = styled.p`
   align-items: center;
   padding-right: 150px;
   padding-left: 150px;
+
   @media screen and (max-width: 768px) {
     font-size: 14px;
-    }
-`
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  @media screen and (min-width: 2560px) and (min-height: 1600px){
+    font-size: 40px;
+    margin-right: 20px;
+    margin-left: 30px;
+  }
+`;
+
 const About = styled.p`
-font-size: 24px;
+  font-size: 24px;
   font-weight: 200;
   line-height: 1.5;
   display: flex;
@@ -37,42 +53,74 @@ font-size: 24px;
   justify-content: center;
   align-items: center;
   padding-left: 150px;
-  `
-  const Aside = styled.p`
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px;
+  }
+`;
+
+const Aside = styled.p`
   font-size: 24px;
   font-weight: 200;
   line-height: 1.5;
   position: relative;
   top: -300px;
   padding-right: 800px;
-  `
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    position: static;
+    top: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+`;
 
 const Img = styled.img`
-    width: 120rem;
-    height: 30rem;
-    border-radius: 17px;
-    position: relative;
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        height: 100%;
-        }`
+  width: 120rem;
+  height: 30rem;
+  border-radius: 17px;
+  position: relative;
 
-        const Image = styled.img`
-        width: 35%;
-        height: 30%;
-        border-radius: 17px;
-        position: relative;
-        right: 10%;
-       `
-       const Images = styled.img`
-        width: 40%;
-        height: 30%;
-        border-radius: 17px;
-        position: relative;
-        left: 30%;
-        top: 150px;
-       `
-        const Footer = styled.footer`
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+const Image = styled.img`
+  width: 35%;
+  height: 30%;
+  border-radius: 17px;
+  position: relative;
+  right: 10%;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    right: 0%;
+  }
+`;
+
+const Images = styled.img`
+  width: 40%;
+  height: 30%;
+  border-radius: 17px;
+  position: relative;
+  left: 30%;
+  top: 150px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    left: 0%;
+    top: 0px;
+  }
+`;
+        const Footer = styled.p`
         border: 1px solid black;
         border-radius: 17px;
         width: 170vh;

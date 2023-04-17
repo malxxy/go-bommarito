@@ -14,7 +14,7 @@ import SanDiego from './components/pages/San Diego';
 import FoodDrink from './components/pages/FoodDrink';
 import Signup from './components/pages/Signup';
 import Login from './components/pages/Login';
-import Lifestyle from './components/pages/Lifestyle';
+
 import Destinations from './components/pages/Destinations';
 import Sports from './components/pages/Sports';
 import People from './components/pages/People';
@@ -31,6 +31,7 @@ import Subscribers from './pagesAdmin/Subscribers';
 import Media from './pagesAdmin/Media';
 import Account from './pagesAdmin/Account';
 import AuthService from './utils/auth';
+import Singleblog from './components/pages/Blog';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -51,7 +52,7 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache(), 
 });
 
 
@@ -64,11 +65,11 @@ function App() {
       <ApolloProvider client={client}>
       <Router>
       <AdminNav />
-      <div className="grid grid-cols-12 h-full">
-          <div className="col-span-3 h-screen">
+      <div className="grid grid-cols-12 min-h-screen">
+          <div className="col-span-3 bg-mainWhite border-b">
             <AdminAside />
           </div>
-        <div className="col-span-9 bg-mainBlue h-screen">
+        <div className="col-span-9 bg-mainBlue min-h-screen max-w-screen">
             <Routes>
               <Route path="/Posts" element={<Posts />}/>
               <Route path="/Categories" element={<Categories />}/>
@@ -93,7 +94,6 @@ function App() {
            <Route path="/discover" element ={<Discover />} />
            <Route path="/San Diego" element={<SanDiego />}/> 
            <Route path="/FoodDrink" element={<FoodDrink />}/>
-           <Route path="/Lifestyle" element={<Lifestyle />}/>
            <Route path="/Destinations" element={<Destinations />}/>
            <Route path="/Sports" element={<Sports />}/>
            <Route path="/People" element={<People />}/>
@@ -102,6 +102,7 @@ function App() {
            <Route path="/login" element={<Login />}/>
            <Route path="/home" element ={<Hero />} />
            <Route path= "/"  element={<Hero/>}/>
+           <Route path="/blogs/:blogId" element={<Singleblog />}/>
         </Routes>
       </Router >
       </ApolloProvider>

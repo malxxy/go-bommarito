@@ -1,5 +1,5 @@
 import '../styles/output.css';
-// import { FaAngleDown } from 'react-icons/fa';
+import { FaAngleDown } from 'react-icons/fa';
 
 function AdminAside() {
     return (
@@ -7,14 +7,14 @@ function AdminAside() {
             <nav>
                 <div className="bg-mainWhite">
                     <ul>
-                        <li className="py-6 rounded-lg hover:bg-lightGrey align-middle"> 
+                        <li className="py-6 rounded-lg hover:bg-lightGrey align-middle border-t"> 
                             <a href="Posts" className="p-4 text-lg font-semibold text-grey">
-                                Posts
+                                Posts <FaAngleDown className="inline" />
                             </a>
                         </li>
                         <li className="py-6 rounded-lg hover:bg-lightGrey align-middle">
                             <a href="Categories" className="p-4 text-lg font-semibold text-grey">
-                                Categories</a>
+                                Categories <FaAngleDown className="inline" /> </a>
                         </li>
                         <li className="py-6 rounded-lg hover:bg-lightGrey align-middle">
                             <a href="Media" className="p-4 text-lg font-semibold text-grey">
@@ -22,7 +22,7 @@ function AdminAside() {
                         </li>
                         <li className="py-6 rounded-lg hover:bg-lightGrey align-middle">
                             <a href="Subscribers" className="p-4 text-lg font-semibold text-grey">
-                                Subscribers</a>
+                                Subscribers <FaAngleDown className="inline" /></a>
                         </li>
                         <li className="py-6 rounded-lg hover:bg-lightGrey align-middle">
                             <a href="Account" className="p-4 text-lg font-semibold text-grey">

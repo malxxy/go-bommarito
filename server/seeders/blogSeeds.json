@@ -1,10 +1,5 @@
 [
     {
-        "blogTitle": "Exploring Tuscany, Italy - The Place to Stay While Visiting",
-        "blogText": "Agriturismo La Ripolina. La Ripolina is located in the heart of Tuscany between the Crete Senesi and Val' d'Orcia. 25 km far rom Siena near Montalcino, the land of Brunello wine. It is surrounded by 43 hectares of land, where vines and cereals are grown. The gentle hills that make this landscape unique and turning with seasons, combined with a place rich in history, with its ancient stone and red brick walls, make it the ideal destination for mental and physical well-being. The large pool with solarium, ping pong, mountain bikes, children’s playground, paths, silence and pure air bring relax to your stay. There are also common BBQ, laundry, and some facilities equipped to be able to eat outdoors.",
-        "blogAuthor": "Jimjones2"
-    },
-    {
         "blogTitle": "Joshua Tree National Park",
         "blogText": "Joshua Tree National Park is a vast protected area in southern California. It's characterized by rugged rock formations and stark desert landscapes. Named for the region’s twisted, bristled Joshua trees, the park straddles the cactus-dotted Colorado Desert and the Mojave Desert, which is higher and cooler. Keys View looks out over the Coachella Valley. Hiking trails weave through the boulders of Hidden Valley.",
         "blogAuthor": "gerryjohnson"
@@ -12,7 +7,7 @@
     {
         "blogTitle": "How Long Do Toyota Camrys Last?",
         "blogText": "Are you in search of a reliable family sedan? Maybe you need something for road trips, or perhaps you simply need something for daily commutes. No matter your situation, there are many reasons to consider a used Toyota Camry. One of the number one reasons, however, is their reliability and lifespan. ",
-        "blogAuthor": "Tom Hanks"
+        "blogAuthor": "jeffb"
     },
     {
         "blogTitle": "Bear Ahead!",
@@ -32,7 +27,7 @@
     {
         "blogTitle": "Our Solar System",
         "blogText": "The Solar System is the gravitationally bound system of the Sun and the objects that orbit it. It formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority of the system's mass is in the Sun, with most of the remaining mass contained in the planet Jupiter.",
-        "blogAuthor": "tommyhanks1"
+        "blogAuthor": "jeffb"
     },
     {
         "blogTitle": "Wear Sneakers with Everything",
@@ -50,8 +45,13 @@
         "blogAuthor": "Jimjones2"
     },
     {
-        "blogTitle": "Change your oil!",
-        "blogText": "And while the old rule of thumb was to change your oil every 3,000 miles or so, modern automotive technology has stretched that figure even further. Due to better engineering and better oil formulations, now you can expect between 7,500 to 10,000 miles between oil changes!",
-        "blogAuthor": "tommyhanks1"
+        "blogTitle": "The Wonders of the Pacific Northwest",
+        "blogText": "Our 5 favorite hidden gems in Oregon and Washington",
+        "blogAuthor": "jeffb"
+    },
+    {
+        "blogTitle": "Exploring Tuscany, Italy - The Place to Stay While Visiting",
+        "blogText": "Agriturismo La Ripolina. La Ripolina is located in the heart of Tuscany between the Crete Senesi and Val' d'Orcia. 25 km far rom Siena near Montalcino, the land of Brunello wine. It is surrounded by 43 hectares of land, where vines and cereals are grown. The gentle hills that make this landscape unique and turning with seasons, combined with a place rich in history, with its ancient stone and red brick walls, make it the ideal destination for mental and physical well-being. The large pool with solarium, ping pong, mountain bikes, children’s playground, paths, silence and pure air bring relax to your stay. There are also common BBQ, laundry, and some facilities equipped to be able to eat outdoors.",
+        "blogAuthor": "jeffb"
     }
 ]

@@ -2,6 +2,8 @@ const db = require('../config/connection');
 const { Profile, Blog } = require('../models');
 const profileSeeds = require('./profileSeeds.json');
 const blogSeeds = require('./blogSeeds.json');
+const commentSeeds = require('./commentSeeds.json')
+
 
 db.once('open', async () => {
     try {
@@ -15,7 +17,8 @@ db.once('open', async () => {
       // seeds all exisiting blog info
       for (let i = 0; i < blogSeeds.length; i++) {
         const { _id, blogAuthor } = await Blog.create(blogSeeds[i]);
-        const user = await Profile.findOneAndUpdate(
+
+        await Profile.findOneAndUpdate(
           { username: blogAuthor },
           {
             $addToSet: {
@@ -23,6 +26,23 @@ db.once('open', async () => {
             },
           }
         );
+      }
+     
+      
+      for (let i = 0; i < commentSeeds.length; i++) {
+        let updated = await Blog.findOneAndUpdate(
+          { _id: commentSeeds[i].blogId },
+          {
+            $addToSet: {
+              comments: {
+                $commentText: commentSeeds[i].commentText,
+                $commentAuthor: commentSeeds[i].commentAuthor
+              },
+            },
+            new: true,
+            runValidators: true,
+          }
+        )
       }
       console.log('Data has successfully seeded!');
     } catch (err) {

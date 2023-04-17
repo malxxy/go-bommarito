@@ -1,0 +1,42 @@
+.blogitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px #25282b;
+    margin: 15px 0px 15px 0px;
+    border: 1px lightblue solid;
+    border-radius: 10px;
+}
+
+.blogitem h4 {
+    font-family: 'Rockwell'
+}
+
+.bloginfo {
+    display: flex;
+    justify-content: center;
+}
+
+.bloginfo h2 {
+    font-weight: bold;
+    font-size: small;
+}
+
+.bloginfo h2:hover {
+    color: blue;
+    transition: 3s;
+}
+
+.bloginfo p {
+    display: flex;
+    justify-content: center;
+    font-size: small;
+}
+
+.blogitem:hover {
+    cursor: pointer;
+    background-color:lightgoldenrodyellow;
+    transition: all 2s;
+    transform: scale(1.05);
+   }
+

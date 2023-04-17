@@ -1,0 +1,79 @@
+.blogpage {
+    display: flex;
+    justify-content: space-between;
+}
+
+.singleblog {
+    margin: 20px;
+    margin-top: 30px;
+    width: 60%;
+    height: 700px;
+    background-color: lightgoldenrodyellow;
+    border: solid black 1px;
+}
+
+.bloghead {
+    margin: 20px;
+    padding: 10px;
+    height: fit-content;
+}
+
+.bloghead h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: xxx-large;
+}
+
+.bloghead h3 {
+    font-weight: bold;
+}
+
+.publish {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.bloghead p {
+    font-size: small;
+}
+
+.blogtext {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.blogtext p {
+    line-height: 175%;
+    text-indent: 35px;
+}
+
+.comments {
+    border: 2px solid black;
+    width: 25%;
+    margin: 20px 40px 0px 0px;
+    border-radius: 5px;
+}
+
+.commenthead h2 {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.combox {
+    background-color: lightcyan;
+    box-shadow: 0px 0px 10px #25282b;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.commenttext {
+    padding: 0px 15px 0px 15px;
+}
+
+.createdat {
+    font-size: x-small;
+    padding: 0px 15px 0px 15px;
+}
+

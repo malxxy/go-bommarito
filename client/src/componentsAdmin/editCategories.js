@@ -31,7 +31,7 @@ function EditCategories() {
     <div className='bg-mainWhite flex rounded-lg drop-shadow-2xl my-10'>
         <div className="flex-grow">
           <div>
-          <h1 className='justify-center text-xl block m-5'>Add a Category</h1>
+          <h1 className='justify-center text-2xl block m-5'>Add a Category</h1>
             <form className='form'>
                 <input
                 value={category}
@@ -39,7 +39,7 @@ function EditCategories() {
                 onChange={handleInputChange}
                 type="text"
                 placeholder="New Category"
-                className='form-input block'
+                className='block'
                 />
             <button className='bg-mainBlue hover:bg-darkestBlue rounded-md p-2 my-3 text-mainWhite' onClick={handleFormSubmit}>Add Category</button>
             </form>
