@@ -39,7 +39,7 @@ function EditCategories() {
                 onChange={handleInputChange}
                 type="text"
                 placeholder="New Category"
-                className='form-input block'
+                className='block'
                 />
             <button className='bg-mainBlue hover:bg-darkestBlue rounded-md p-2 my-3 text-mainWhite' onClick={handleFormSubmit}>Add Category</button>
             </form>
