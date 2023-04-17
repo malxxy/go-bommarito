@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import CommentForm from '../../commentform.js';
 
 import { QUERY_SINGLE_BLOG } from '../../../utils/queries';
 
