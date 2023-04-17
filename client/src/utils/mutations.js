@@ -16,14 +16,14 @@ export const LOGIN_USER = gql`
 
 // CREATE PROFILE - requires a username, email, firstname, lastname, and password
 export const ADD_PROFILE = gql`
-  mutation Add_Profile ($username: String!, $email: String!, $password: String!, $firsName: String!, $lastName: String!) {
-  addProfile(username: $username, email: $email, password: $password, firstName: $firsName, lastName: $lastName) {
+  mutation Add_Profile ($username: String!, $firstName: String!, $lastName: String!, $email: String!, $password: String!) {
+  addProfile(username: $username, firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
     token
     profile {
       _id
+      username
       firstName
       lastName
-      username
       email
       password
     }

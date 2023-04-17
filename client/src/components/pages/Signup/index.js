@@ -49,7 +49,6 @@ const Signup = () => {
     });
   };
 
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -66,10 +65,13 @@ const Signup = () => {
       console.error(e);
     }
     // clear form values
-    setFormState({
-      username: '',
-      password: '',
-    });
+    // setFormState({
+    //   username: '',
+    //   firstName: '',
+    //   lastName: '',
+    //   email: '',
+    //   password: '',
+    // });
   };
   return (
     <ApolloProvider>
