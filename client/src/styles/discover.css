@@ -1,0 +1,17 @@
+.blogitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    margin: 15px 0px 15px 0px;
+}
+
+.bloginfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloginfo p {
+    font-size: small;
+}

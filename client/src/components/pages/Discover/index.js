@@ -93,7 +93,7 @@ const Discover = () => {
 
     const { loading, data } = useQuery(QUERY_BLOGS);
     const blogs = data?.blogs || [];
-    console.log(blogs)
+    console.log("blogs", blogs)
         
     return (
         <Main>
