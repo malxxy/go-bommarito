@@ -69,7 +69,7 @@ function App() {
           <div className="col-span-3 bg-mainWhite border-b">
             <AdminAside />
           </div>
-        <div className="col-span-9 bg-mainBlue h-full min-h-screen">
+        <div className="col-span-9 bg-mainBlue h-full min-h-screen max-w-screen">
             <Routes>
               <Route path="/Posts" element={<Posts />}/>
               <Route path="/Categories" element={<Categories />}/>
