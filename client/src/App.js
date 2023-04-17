@@ -65,7 +65,7 @@ function App() {
       <Router>
       <AdminNav />
       <div className="grid grid-cols-12 h-full">
-          <div className="col-span-3 h-screen">
+          <div className="col-span-3 bg-mainWhite border-b">
             <AdminAside />
           </div>
         <div className="col-span-9 bg-mainBlue h-screen">
