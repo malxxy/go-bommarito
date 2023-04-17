@@ -1,36 +1,41 @@
 import React, { useState } from 'react';
-import '../styles/output.css';
+import { useMutation } from '@apollo/client';
+import { ADD_BLOG } from '../utils/mutations';
 
 function EditBlog() {
-  // Create state variables for the fields in the form
-  // We are also setting their initial values to an empty string
-  const [blogTitle, setBlogTitle] = useState('');
-  const [blogText, setBlogText] = useState('');
-  const [blogAuthor, setBlogAuthor] = useState('');
+  const [formState, setFormState] = useState({
+    blogTitle: '',
+    blogAuthor: '',
+    blogText: '',
+  });
 
-  const handleInputChange = (e) => {
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
+  // Set up our mutation with an option to handle errors
+  const [addBlog, { error } ] = useMutation(ADD_BLOG);
 
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-    if (inputType === 'blogTitle') {
-      setBlogTitle(inputValue);
-    } else if (inputType === 'blogText') {
-      setBlogText(inputValue);
-    } else {
-      setBlogAuthor(inputValue);
+    try {
+      const { data } = addBlog({
+        variables: { ...formState },
+      });
+
+      window.location.reload();
+    } catch (err) {
+      console.error(err);
     }
   };
 
-  const handleFormSubmit = (e) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    e.preventDefault();
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-    // If everything goes according to plan, we want to clear out the input after a successful registration.
-    setBlogTitle('');
-    setBlogText('');
-    setBlogAuthor('');
+    if (name === 'blogTitle' ) {
+      setFormState({ ...formState, [name]: value });
+    } else if (name !== 'blogAuthor') {
+      setFormState({ ...formState, [name]: value });
+    } else if (name !== 'blogText') {
+      setFormState({ ...formState, [name]: value });
+    }
   };
 
   return (
@@ -40,30 +45,35 @@ function EditBlog() {
           <h1 className='text-xl block m-5'>Publish a Blog Post</h1>
             <form className='form'>
                 <input
-                value={blogTitle}
+                value={formState.blogTitle}
                 name="blogTitle"
-                onChange={handleInputChange}
+                onChange={handleChange}
                 type="text"
                 placeholder="Blog Title"
                 className='form-input block'
                 />
                 <input
-                value={blogAuthor}
+                value={formState.blogAuthor}
                 name="blogAuthor"
-                onChange={handleInputChange}
+                onChange={handleChange}
                 type="text"
                 placeholder="Blog Author"
                 className='form-input block'
                 />
                 <input
                 className='form-input block'
-                value={blogText}
+                value={formState.blogText}
                 name="blogText"
-                onChange={handleInputChange}
+                onChange={handleChange}
                 type="text"
                 placeholder="Write blog here"
                 />
             <button className='bg-mainBlue hover:bg-darkestBlue rounded-md p-2 my-3 text-mainWhite' onClick={handleFormSubmit}>Publish</button>
+            {error && (
+            <div className="col-12 my-3 text-black p-3">
+            Something went wrong...
+            </div>
+        )}
             </form>
         </div>
       </div>
