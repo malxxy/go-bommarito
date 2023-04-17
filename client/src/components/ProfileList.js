@@ -1,29 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/discover.css'
+// import Singleprofile from './pages/Profile';
 
-const ProfileList = ({ profiles, title }) => {
+const ProfileList = ({ profiles }) => {
   if (!profiles.length) {
-    return <h3>No Profiles Yet</h3>;
+    return <h3>No profiles Yet</h3>;
   }
+
   return (
     <div>
-      <h3 className="text-primary">{title}</h3>
+      <h3 className="text-primary">Discover People</h3>
       <div className="flex-row justify-space-between my-4">
         {profiles &&
-          profiles.map((profile, index) => (
-            <div key={profile._id} className="col-12 col-xl-6">
+          profiles.map((profile) => (
+            <Link className="btn btn-block btn-squared btn-light text-dark" to={`/profiles/${profile._id}`}>
+            <div key={profile._id} className="profileitem col-12 col-xl-6">
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0">
-                  {profile.username} <br />
+                  {profile.profileTitle} <br />
                 </h4>
-                <Link
-                  className="btn btn-block btn-squared btn-light text-dark"
-                  to={`/profiles/${profile._id}`}
-                >
-                  View their blogs.
-                </Link>
+                <div className='profileinfo'>
+                  <div>
+                    <h2>
+                      User: {profile.username}
+                    </h2>
+                    <p>
+                      {profile.blogs}
+                    </p>
+                  </div>
+                </div>
+                  
               </div>
             </div>
+            </Link>
           ))}
       </div>
     </div>
