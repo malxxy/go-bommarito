@@ -60,7 +60,7 @@ function Categories() {
     <Main>
       <div className="flex flex-wrap space-x-6 justify-center items-center">
         <a href="https://blog.sandiego.org/2023/01/23-new-things-to-see-and-do-in-23/" target="_blank">
-          <Image className="rounded-xl mt-[30px] mr-[30px] " src="../SanD.png" alt="San Diego" />
+          <Image className="rounded-xl mt-[30px] mr-[31px] " src="../SanD.png" alt="San Diego" />
         </a>
         <a href="https://blog.sandiego.org/2023/04/top-things-to-do-in-san-diego-apr-11-23-2023/" target="_blank">
           <Image className=" rounded-xl" src="../SanDiegoT.png" alt="San Diego" />
@@ -70,7 +70,7 @@ function Categories() {
             <Image className="mr-[30px] rounded-xl " src="../Lego.png" alt="Lego" />
           </a>
           <a href="https://blog.sandiego.org/2023/04/spring-clean-your-mind-body-and-spirit-in-san-diego-a-guide-to-recharge-reset-and-declutter-internally/" target="_blank">
-            <Image className="mt-[30px] mr-[30px] rounded-xl " src="../Spring.png" alt="Spring" />
+            <Image className="mt-[30px]  rounded-xl " src="../Spring.png" alt="Spring" />
           </a>
         </div>
       </div>
