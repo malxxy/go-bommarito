@@ -115,7 +115,7 @@ const Published = ({blogs}) => {
         <tr key={blog._id} className="bg-mainWhite border-b border-mainBlue transition duration-300 ease-in-out hover:bg-lightGrey">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{blog.blogTitle}</td>
           <td className="text-sm text-mainBlack font-light px-6 py-3 whitespace-nowrap">{blog.blogAuthor}</td>
-          <td className="text-sm text-mainBlack font-light px-6 py-3 whitespace-nowrap overflow-hidden">{blog.blogText.substring(0,25)}</td>
+          <td className="text-sm text-mainBlack font-light px-6 py-3 whitespace-nowrap overflow-hidden">{blog.blogText.substring(0,25)}...</td>
           <td className="text-sm text-mainBlack font-light px-6 py-3 whitespace-nowrap">{blog.createdAt}</td>
           <td className="align-center">
           <FaEdit />
