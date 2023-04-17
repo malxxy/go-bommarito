@@ -43,30 +43,30 @@ function EditBlog() {
         <div className="flex-grow">
           <div>
           <h1 className='text-xl block m-5'>Publish a Blog Post</h1>
-            <form className='form'>
+            <form className='form m-6'>
                 <input
                 value={formState.blogTitle}
                 name="blogTitle"
                 onChange={handleChange}
                 type="text"
-                placeholder="Blog Title"
-                className='form-input block'
+                placeholder=" Blog Title"
+                className='m-3 rounded block'
                 />
                 <input
                 value={formState.blogAuthor}
                 name="blogAuthor"
                 onChange={handleChange}
                 type="text"
-                placeholder="Blog Author"
-                className='form-input block'
+                placeholder=" Author Username"
+                className='m-3 rounded block'
                 />
                 <input
-                className='form-input block'
+                className='m-3 flex w-full h-20 rounded block'
                 value={formState.blogText}
                 name="blogText"
                 onChange={handleChange}
                 type="text"
-                placeholder="Write blog here"
+                placeholder=" Write blog text here"
                 />
             <button className='bg-mainBlue hover:bg-darkestBlue rounded-md p-2 my-3 text-mainWhite' onClick={handleFormSubmit}>Publish</button>
             {error && (

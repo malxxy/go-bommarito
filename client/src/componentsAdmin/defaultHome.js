@@ -51,10 +51,11 @@ const DefaultHome = ({blogs}) => {
             <div className="flex-grow max-w-100 h-14 ...">
                 <h1 className="mx-3 text-mainWhite text-2xl">Recent Blog Posts</h1>
                 <div>
-                <div className="flex-grow">{blogs && 
+                <div className="flex">{blogs && 
                         blogs.map((blog) => (
                         <div key={blog._id}>
-                    <div class="max-w-sm mx-3 my-5 h-auto rounded overflow-hidden drop-shadow-2xl bg-mainWhite transition duration-300 ease-in-out hover:bg-lightGrey">
+                    <div>
+                    <div class="max-w-lg mx-3 my-5 h-auto rounded overflow-hidden drop-shadow-2xl bg-mainWhite transition duration-300 ease-in-out hover:bg-lightGrey">
                             <img className="w-full" src="../Italy.jpg" alt="default"></img>
                                 <div className="px-6 py-4">
                                     <div className="font-bold text-xl mb-2">{blog.blogTitle}</div>
@@ -67,6 +68,7 @@ const DefaultHome = ({blogs}) => {
                                     </div>
                                 </div>
                             </div>
+                    </div>
                     ))}
                 </div>
             </div>
