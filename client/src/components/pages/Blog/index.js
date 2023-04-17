@@ -46,7 +46,12 @@ const Singleblog = () => {
     <div className='comments'>
         <div className='commenthead'>
             <h2>Comments</h2>
-
+            {blog.comments.map((comment) => (
+                <div className='combox'>
+                    <p className='commenttext'>{comment.commentText}</p>
+                    <p className='createdat'>{comment.commentAuthor} @ {comment.createdAt}</p>
+                </div>
+            ))}
         </div>
     </div>
 
