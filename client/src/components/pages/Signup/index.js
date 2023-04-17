@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 import '../../../login-signup.css';
-import { useMutation, ApolloProvider } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 import styled from 'styled-components';
@@ -65,16 +65,15 @@ const Signup = () => {
       console.error(e);
     }
     // clear form values
-    // setFormState({
-    //   username: '',
-    //   firstName: '',
-    //   lastName: '',
-    //   email: '',
-    //   password: '',
-    // });
+    setFormState({
+      username: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+    });
   };
   return (
-    <ApolloProvider>
     <main className="flex-row justify-center mb-4 page">
       <div className="col-12 col-lg-10">
         <div className="card">
@@ -154,7 +153,6 @@ const Signup = () => {
         <p>© 2023 GoBommarito. All rights reserved.</p>
       </Footer>
     </main>
-    </ApolloProvider>
   );
 };
 
