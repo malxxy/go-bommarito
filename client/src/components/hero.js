@@ -135,7 +135,7 @@ const Images = styled.img`
 function Hero() {
   return (
    <Main>
-          <Img src="../stock img.webp" alt="stock image"/>
+          <Img src="../homeHero.png" alt="surfer's sanctuary by bommarito art"/>
     <Content>
         <Title>
             <h1>GoBommarito</h1>
