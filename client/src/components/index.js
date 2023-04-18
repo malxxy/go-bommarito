@@ -31,9 +31,9 @@ function Navbar() {
             {/* <NavLink to="/Sports" activeStyle>
             Sports
             </NavLink> */}
-            <NavLink to="/People" activeStyle>
+            {/* <NavLink to="/People" activeStyle>
             People
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/ArtCulture" activeStyle>
             Art+Culture
             </NavLink>
