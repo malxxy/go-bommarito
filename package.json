@@ -4,10 +4,11 @@
   "description": "Fullstack blog application for professional photographer/business partner duo sharing their curated favorites across the globe.",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
