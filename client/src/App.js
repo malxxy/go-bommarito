@@ -32,6 +32,8 @@ import Media from './pagesAdmin/Media';
 import Account from './pagesAdmin/Account';
 import AuthService from './utils/auth';
 import Singleblog from './components/pages/Blog';
+import Singleprofile from './components/pages/Profile';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -103,6 +105,7 @@ function App() {
            <Route path="/home" element ={<Hero />} />
            <Route path= "/"  element={<Hero/>}/>
            <Route path="/blogs/:blogId" element={<Singleblog />}/>
+           <Route path="/profiles/:profileId" element={<Singleprofile />}/>
         </Routes>
       </Router >
       </ApolloProvider>
