@@ -50,7 +50,7 @@ To install necessary dependencies, run the following command:
 ## Usage
 Visit the deployed Heroku link here.
 
-https://boiling-shelf-38038.herokuapp.com/
+https://go-bommarito.herokuapp.com/
 
 <br>
 Alternatively, install dependencies and run on your local machine with `npm run develop`.
