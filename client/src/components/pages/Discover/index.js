@@ -98,7 +98,7 @@ const Discover = () => {
     return (
         <Main>
               <div className="flex-row justify-center">
-                <div className="col-12 col-md-10 my-3">
+                <div className="col-12 col-md-4 my-3">
                   {loading ? (
                     <div>Loading...</div>
                   ) : (

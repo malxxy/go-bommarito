@@ -39,8 +39,8 @@ const Login = (props) => {
   };
   return (
     <ApolloProvider>
-    <main className="flex justify-center h-full">
-        <div className="card bg-mainWhite p-10 my-5 rounded-md">
+    <main className="flex justify-center h-screen page">
+        <div className="card bg-mainWhite p-10 my-5 rounded-md min-h-min">
           <h4 className="card-header text-mainBlack text-xl p-2">Login</h4>
           <div className="card-body">
             {data ? (
