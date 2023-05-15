@@ -7,25 +7,25 @@ import { ADD_PROFILE } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 import styled from 'styled-components';
 
-const Footer = styled.p`
-  border: 1px solid black;
-  border-radius: 17px;
-  width: 170vh;
-  font-size: 24px;
-  font-weight: 200;
-  line-height: 1.5;
-  color: white;
-  background-color: #333;
-  text-align: center;
-  margin-left: 150px;
+// const Footer = styled.p`
+//   border: 1px solid black;
+//   border-radius: 17px;
+//   width: 170vh;
+//   font-size: 24px;
+//   font-weight: 200;
+//   line-height: 1.5;
+//   color: white;
+//   background-color: #333;
+//   text-align: center;
+//   margin-left: 150px;
 
-  /* Media query for screens smaller than 768px */
-  @media (max-width: 767px) {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-`;
+//   /* Media query for screens smaller than 768px */
+//   @media (max-width: 767px) {
+//     width: 90%;
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+// `;
 
 const Signup = () => {
   
@@ -149,9 +149,6 @@ const Signup = () => {
           </div>
         </div>
       </div>
-      <Footer> 
-        <p>© 2023 GoBommarito. All rights reserved.</p>
-      </Footer>
     </main>
   );
 };
