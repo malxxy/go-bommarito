@@ -9,7 +9,7 @@
 }
 
 .blogitem h4 {
-    font-family: 'Rockwell'
+    font-family: 'Rockwell';
 }
 
 .bloginfo {
@@ -18,8 +18,8 @@
 }
 
 .bloginfo h2 {
-    font-weight: bold;
     font-size: small;
+    justify-content: center;
 }
 
 .bloginfo h2:hover {

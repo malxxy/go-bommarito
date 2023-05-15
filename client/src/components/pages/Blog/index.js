@@ -26,49 +26,46 @@ const Singleblog = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className='blogpage'>
-    <div className="singleblog">
-        <div className='bloghead'>
-            <h2>
-                {blog.blogTitle}  
-            </h2>
-            <h3>
-                <span className='publish'>published by:</span> {blog.blogAuthor}
-            </h3>
-            <p>
-                {blog.createdAt}
-            </p>
-        </div>
-        <div className="blogtext">
-            <p>
-            {blog.blogText}
-            </p>
-        </div>
-    </div>
-    <div className='comments'>
-        <div className='commenthead'>
-            <h2>Comments</h2>
-            {blog.comments.map((comment) => (
-                <div className='combox'>
-                    <p className='commenttext'>{comment.commentText}</p>
-                    <p className='createdat'>{comment.commentAuthor} @ {comment.createdAt}</p>
-                </div>
-            ))}
-        </div>
-        <div className='addcomment'>
-            <div>
-                <button>Add a comment +</button>
-                
-                <p>
-                You need to be logged in to share your thoughts. Please{' '}
-                <Link to="/login"><span className='commentlink'>login</span></Link> or <Link to="/signup"><span className='commentlink'>signup</span></Link>
-                </p>
-            </div>
-        </div>
-    </div>
-        
-    </div>
-    
+      <div className='blogpage'>
+          <div className='singleblog'>
+              <div className='bloghead border-y-2'>
+                  <h2>
+                      {blog.blogTitle}
+                  </h2>
+                  <h3 className='publish text-grey'>
+                      <span>Published by:</span> {blog.blogAuthor}
+                  </h3>
+                  <h3 className='publish text-grey'>
+                      <span>Published on:</span> {blog.createdAt}
+                  </h3>
+              </div>
+              <div className='blogtext'>
+                  <p>
+                      {blog.blogText}
+                  </p>
+              </div>
+          </div>
+          <div className='comments'>
+              <div className='commenthead border-y-2'>
+                  <h2>Comments</h2>
+                  {blog.comments.map((comment) => (
+                      <div className='combox'>
+                          <p className='commenttext'>{comment.commentText}</p>
+                          <p className='createdat'>{comment.commentAuthor} @ {comment.createdAt}</p>
+                      </div>
+                  ))}
+              </div>
+              <div className='addcomment bg-lightGrey'>
+                  <div>
+                      <button className='bg-mainBlue text-mainWhite'>Add a comment +</button>
+                      <p>
+                          You need to be logged in to share your thoughts. Please{' '}
+                          <Link to="/login"><span className='commentlink'>login</span></Link> or <Link to="/signup"><span className='commentlink'>signup</span></Link>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
   );
 };
 

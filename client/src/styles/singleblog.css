@@ -4,12 +4,9 @@
 }
 
 .singleblog {
-    margin: 20px;
-    margin-top: 30px;
     width: 60%;
+    margin: 15px;
     height: 700px;
-    background-color: lightgoldenrodyellow;
-    border: solid black 1px;
 }
 
 .bloghead {
@@ -24,10 +21,6 @@
     font-size: xxx-large;
 }
 
-.bloghead h3 {
-    font-weight: bold;
-}
-
 .publish {
     font-weight: normal;
     font-style: italic;
@@ -38,8 +31,7 @@
 }
 
 .blogtext {
-    margin-top: 20px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .blogtext p {
@@ -51,22 +43,20 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 2px solid black;
     width: 25%;
-    margin: 20px 40px 0px 0px;
+    margin: 35px 40px 0px 0px;
     border-radius: 5px;
 }
 
 .commenthead h2 {
     display: flex;
     justify-content: center;
-    font-size: x-large;
+    font-size: large;
     font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .combox {
-    background-color: lightcyan;
-    box-shadow: 0px 0px 10px #25282b;
     border-radius: 5px;
     margin: 10px;
 }
@@ -82,15 +72,14 @@
 
 .addcomment {
     align-self: flex-start;
-    background-color: lightgoldenrodyellow;
     bottom: 0px;
+    padding: 2px;
 }
 .addcomment div {
     text-align: center;
 }
 .addcomment button {
     margin: 10px;
-    background-color: lightskyblue;
     border-radius: 20px;
     align-items: center;
     padding: 8px;
