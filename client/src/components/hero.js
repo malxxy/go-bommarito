@@ -84,6 +84,7 @@ const Img = styled.img`
   height: 30rem;
   border-radius: 17px;
   position: relative;
+  padding: 10px;
 
   @media screen and (max-width: 768px) {
     width: 100%;
