@@ -1,5 +1,6 @@
 import '../styles/output.css';
 import Auth from "../../src/utils/auth";
+import { NavLink as Link } from 'react-router-dom';
 
 function AdminNav () {
     const logout = (event) => {
@@ -16,7 +17,7 @@ function AdminNav () {
                     </h2>
                 </Link>
             </div>
-            <div className="p-4">
+            <div className="p-4 inline-flex">
                 <Link to='/AdminHome'>
                     <h2 className="p-4 text-lg rounded-md hover:bg-mainBlue hover:text-mainWhite font-semibold leading-6 text-gray-900">
                         Home
@@ -33,7 +34,7 @@ function AdminNav () {
                 </Link>
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end" onClick={logout}>
-                <a href="/" className="p-4 rounded-md text-lg font-semibold leading-6 text-gray-900 hover:bg-mainBlue hover:text-mainWhite">
+                <a href="/Home" className="p-4 rounded-md text-lg font-semibold leading-6 text-gray-900 hover:bg-mainBlue hover:text-mainWhite">
                 Log out <span aria-hidden="true">&rarr;</span>
                 </a>
             </div>
