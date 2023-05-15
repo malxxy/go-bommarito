@@ -104,7 +104,7 @@ const Discover = () => {
                   ) : (
                     <BlogList
                       blogs={blogs}
-                      title="Here's the current roster of friends..."
+                      title="Here's the current blog posts..."
                     />
                   )}
                 </div>

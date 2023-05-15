@@ -28,16 +28,16 @@ const Singleblog = () => {
   return (
     <div className='blogpage'>
     <div className="singleblog">
-        <div className='bloghead'>
+        <div className='bloghead border-y-2'>
             <h2>
                 {blog.blogTitle}  
             </h2>
-            <h3>
-                <span className='publish'>published by:</span> {blog.blogAuthor}
+            <h3 className='publish text-grey'>
+                <span>Published by:</span> {blog.blogAuthor}
             </h3>
-            <p>
-                {blog.createdAt}
-            </p>
+            <h3 className='publish text-grey'>
+                <span>Published on:</span> {blog.createdAt}
+            </h3>
         </div>
         <div className="blogtext">
             <p>

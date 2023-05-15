@@ -12,23 +12,23 @@ const BlogList = ({ blogs }) => {
 
   return (
     <div>
-      <h3 className="text-primary">Recent Posts</h3>
+      <h2 className="flex justify-center">Recent Posts</h2>
       <div className="flex-row justify-space-between my-4">
         {blogs &&
           blogs.map((blog) => (
             <Link className="btn btn-block btn-squared btn-light text-dark" to={`/blogs/${blog._id}`}>
             <div key={blog._id} className="blogitem col-12 col-xl-6">
               <div className="card mb-3">
-                <h4 className="card-header bg-dark text-light p-2 m-0">
+                <h4 className="card-header text-darkestBlue p-2 m-0">
                   {blog.blogTitle} <br />
                 </h4>
                 <div className='bloginfo'>
                   <div>
-                    <h2>
-                      created by: {blog.blogAuthor}
+                    <h2 className='text-grey'>
+                      Author: {blog.blogAuthor}
                     </h2>
-                    <p>
-                      {blog.createdAt}
+                    <p className='text-grey'>
+                      Published: {blog.createdAt}
                     </p>
                   </div>
                 </div>
